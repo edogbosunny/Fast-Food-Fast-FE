@@ -11,7 +11,8 @@
     "start": "webpack-dev-server --config webpack.dev.js",
     "test": "jest ./test",
     "lint:fix": "eslint --fix ./ --ext .js --color",
-    "coverage": "npm run test -- --coverage"
+    "coverage": "npm run test -- --coverage",
+    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./test/enzyme.setup.js"
@@ -19,6 +20,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "coveralls": "^3.0.2",
     "css-loader": "^2.0.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
