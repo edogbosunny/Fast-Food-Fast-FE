@@ -12,7 +12,7 @@ before_script:
  - ./cc-test-reporter before-build
  - npm run coverage
 
-# script: npm run coverage
+script: npm run coverage
 
 cache:
   directories:
