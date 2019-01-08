@@ -12,6 +12,9 @@ module.exports = {
   entry: {
     main: './src/index.jsx',
   },
+  resolve: {
+    extensions: ['.jsx', '.js', '.json'],
+  },
   output: {
     filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'dist'),

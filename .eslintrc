@@ -19,6 +19,7 @@
   },
 
   "rules": {
+    "import/extensions":[{"jsx": "never"}],
     "no-console": "warn",
     "jsx-quotes":"off",
     "prefer-stateless-function": 0,
