@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './component/UI/navbar/Navbar.jsx';
 import Footer from './component/UI/footer/Footer.jsx';
 import Landing from './component/Pages/Landing.jsx';
+import Login from './component/Pages/Login.jsx';
 // import 'react-bootstrap';
 
 // import './styles/global.scss';
@@ -17,6 +18,9 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path='/' component={Landing} />
+          </Switch>
+          <Switch>
+            <Route exact path='/login' component={Login} />
           </Switch>
           <Footer />
         </div>
