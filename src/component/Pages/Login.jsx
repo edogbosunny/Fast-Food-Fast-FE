@@ -1,5 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+// import { connect } from 'react-redux';
 import LoginCard from '../UI/cards/LoginCard.jsx';
 import '../../styles/style.css';
 
