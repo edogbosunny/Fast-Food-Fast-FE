@@ -1,7 +1,12 @@
-$HeimdalAsh : #424242; 
-$Heimdaltext: #f2f2f2;
+$fffAsh : #424242; 
+$ffftext: #f2f2f2;
+$fffsubmitbtn: #4caf50;
 
-body{
-    background: $HeimdalAsh;
-    color: $Heimdaltext;
+.submitbtn{
+    background: $fffsubmitbtn !important;
+}
+.submitbtn:hover{
+    background: $ffftext !important;
+    color: $fffAsh !important;
+    border-color:$fffsubmitbtn !important;
 }
