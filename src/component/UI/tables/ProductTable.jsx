@@ -1,7 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import '../../../styles/ind.css';
 
-const ProductTable = () => (
+const ProductTable = (props) => (
   <div className='yoo'>
     <table>
       <thead className='cart_summary'>
@@ -18,7 +20,7 @@ const ProductTable = () => (
                         Total
           </th>
           <th id='grandTotal'>
-                        0
+                        { props.cartCount }
           </th>
         </tr>
         <tr>
@@ -34,4 +36,6 @@ const ProductTable = () => (
   </div>
 );
 
-export default ProductTable;
+const mapStateToProps = (state) => ({ cartCount: state.cart.count });
+
+export default connect(mapStateToProps)(ProductTable);

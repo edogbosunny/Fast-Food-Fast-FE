@@ -7,12 +7,66 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 import { getAllMenu } from '../../../actions/foodMenuReducer';
+import { addToCart } from '../../../actions/cartActions';
 import '../../../styles/ind.css';
 import Spinner from '../../../utils/Spinner';
 
 class ProductCard extends Component {
+  constructor() {
+    super();
+    this.state = {
+      mealQuantity: 0,
+    };
+    this.onChange = this.onChange.bind(this);
+    this.renderItems = this.renderItems.bind(this);
+    console.log(this.state, '----state-->');
+  }
+
   componentDidMount() {
     this.props.getAllMenu();
+  }
+
+  onAdd(menu) {
+    this.props.addToCart(menu);
+  }
+
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+    // console.log(this.state);
+  }
+
+  renderItems() {
+    const { data } = this.props.foodMenu.foodMenu;
+
+    return data.map(Foodmeal => (
+      <div key={Foodmeal.meal_id}>
+        {/* cart cards would be here */}
+        <div className='card griditem'>
+          <div>
+            <div className='cardimg cardImage' />
+          </div>
+
+          <div>
+            <h5 id='meal'>
+              Name:
+              {' '}
+              {Foodmeal.meal}
+            </h5>
+            <h5 id='price'>
+              Price:
+              {' '}
+              {Foodmeal.price}
+            </h5>
+          </div>
+          <div className='cart-btn-mag'>
+            <button type='button' className='btnaccept' id='id'>Add to Cart </button>
+            <button type='button' id='sub' className='btncomp'>-</button>
+            <input type='number' onChange={this.onChange} id='num' className='btncomp1' name='mealQuantity' disabled />
+            <button type='button' onClick={() => { this.onAdd(Foodmeal); }} id='add' className='btndeny'>+</button>
+          </div>
+        </div>
+      </div>
+    ));
   }
 
   render() {
@@ -22,53 +76,11 @@ class ProductCard extends Component {
     if (loading) {
       return (<Spinner />);
     }
-    const { data } = this.props.foodMenu.foodMenu;
-    // console.log('hhssdata', data);
-    // const promise = new Promise((resolve, reject) => {
-    //   if (data === null || data === undefined) {
-    //     reject(data);
-    //   }
-    //   resolve(data);
-    // });
-    // promise.then((foodMenuData) => {
-    //   console.log(foodMenuData);
-    //   foodMenuData.map((foodMenu) => {
-    //     console.log(foodMenu);
 
-    //   });
-    // });
-    // promise.catch(err => console.log(err));
-    // console.log(promise);
     return (
-      data.map(data => (
-        <div align='center' className='gridcontainer'>
-          {/* cart cards would be here */}
-          <div className='card griditem'>
-            <div>
-              <div className='cardimg cardImage' />
-            </div>
-
-            <div>
-              <h5 id='meal'>
-              Name:
-                {' '}
-                {data.meal}
-              </h5>
-              <h5 id='price'>
-              Price:
-                {' '}
-                {data.price}
-              </h5>
-            </div>
-            <div className='cart-btn-mag'>
-              <button type='button' className='btnaccept' id='id'>Add to Cart </button>
-              <button type='button' id='sub' className='btncomp'>-</button>
-              <input type='text' id='num' className='btncomp1' value='1' />
-              <button type='button' id='add' className='btndeny'>+</button>
-            </div>
-          </div>
-        </div>
-      ))
+      <div align="center" className="gridcontainer">
+        {this.renderItems()}
+      </div>
     );
   }
 }
@@ -77,6 +89,7 @@ const mapStateToProps = state => ({
   auth: state.auth,
   foodMenu: state.foodMenu,
   loader: state.loader,
+  mealQuantity: state.mealQuantity,
 });
 
-export default withRouter(connect(mapStateToProps, { getAllMenu })(ProductCard));
+export default withRouter(connect(mapStateToProps, { getAllMenu, addToCart })(ProductCard));
