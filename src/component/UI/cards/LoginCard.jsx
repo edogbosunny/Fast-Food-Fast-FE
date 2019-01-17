@@ -9,6 +9,7 @@ import '../../../styles/global.scss';
 import { loginUser } from '../../../actions/authActions';
 import TextFieldGroup from '../textField/TextFieldGroup.jsx';
 
+
 class LoginCard extends Component {
   constructor() {
     super();
@@ -24,7 +25,7 @@ class LoginCard extends Component {
     // eslint-disable-next-line react/destructuring-assignment
     if (this.props.auth.isAuthenticated) {
       // eslint-disable-next-line react/destructuring-assignment
-      this.props.history.push('/dashboard');
+      this.props.history.push('/');
     }
   }
 
@@ -100,6 +101,7 @@ class LoginCard extends Component {
     );
   }
 }
+
 const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors,

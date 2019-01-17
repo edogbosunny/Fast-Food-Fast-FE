@@ -364,7 +364,8 @@ a {
   }
   .loginCard {
     background-color: #4747477b;
-    margin-top:30% !important;
+    /* margin-top:30% !important; */
+    margin-bottom: 30%;
   }
   .cardrg {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -597,8 +598,8 @@ a {
 }
 .footer {
   text-align: center;
-  /* bottom: 0%; */
-  position: sticky !important;
+  bottom: 0%;
+  position: fixed;
   display: table;
   width: 100%;
   background: rgba(255, 255, 255, 1);

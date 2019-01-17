@@ -2,12 +2,44 @@
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 import setAuthToken from '../utils/setAuthToken';
-import { GET_ERRORS, SET_CURRENT_USER } from './types';
+import {
+  GET_ERRORS, SET_CURRENT_USER,
+} from './types';
+import { setLoader } from './loaderActions';
 
 export const setCurrentUser = decoded => ({
   type: SET_CURRENT_USER,
   payload: decoded,
 });
+
+// export const getAllMeal = mealData => ({
+//   type: GET_FOOD_MENU,
+//   payload: mealData,
+// });
+
+// eslint-disable-next-line import/prefer-default-export
+export const registerUser = userData => (dispatch) => {
+  dispatch(setLoader());
+  axios
+    .post('https://fast-food-fast-app.herokuapp.com/api/v1/auth/signup', userData)
+    // eslint-disable-next-line no-unused-vars
+    .then((res) => {
+      const { token } = res.data.data;
+      window.localStorage.setItem('jwtToken', token);
+      setAuthToken(token);
+      const decoded = jwtDecode(token);
+      dispatch(setCurrentUser(decoded));
+      dispatch(setLoader());
+    })
+    // .catch(err => console.log(err.response.data.data.errors.email))
+    .catch(({ response: { data: { data } } }) => {
+      dispatch(setLoader());
+      dispatch({
+        type: GET_ERRORS,
+        payload: data.message ? data : data.errors,
+      });
+    });
+};
 
 export const loginUser = userData => (dispatch) => {
   axios.post('https://fast-food-fast-app.herokuapp.com/api/v1/auth/login', userData)
