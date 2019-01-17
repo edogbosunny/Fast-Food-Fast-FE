@@ -725,14 +725,11 @@ td{
 }
 .footer {
   text-align: center;
-  /* bottom: 0%; */
   padding-top:20px;
-  position: sticky !important;
   display: table;
   width: 100%;
   background: rgba(255, 255, 255, 1);
   height: 60px; /* Height of the footer */
-  /* margin-top: -100px; */
 }
 .order {
   color: #474747;

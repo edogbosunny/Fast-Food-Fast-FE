@@ -12,6 +12,9 @@ const TextFieldGroup = ({
   type,
   message,
   onChange,
+  firstname,
+  lastname,
+  confirmpassword,
   disabled,
   minLength,
   id,
@@ -24,6 +27,9 @@ const TextFieldGroup = ({
       className={classnames('form-control', { 'is-invalid': error })}
       name={name}
       message={message}
+      firstname={firstname}
+      lastname={lastname}
+      confirmpassword={confirmpassword}
       minLength={minLength}
       placeholder={placeholder}
       disabled={disabled}
@@ -41,6 +47,9 @@ TextFieldGroup.propTypes = {
   value: PropTypes.string.isRequired,
   error: PropTypes.string,
   minLength: PropTypes.string,
+  firstname: PropTypes.string,
+  lastname: PropTypes.string,
+  confirmpassword: PropTypes.string,
   type: PropTypes.string,
   message: PropTypes.string,
   onChange: PropTypes.func.isRequired,
