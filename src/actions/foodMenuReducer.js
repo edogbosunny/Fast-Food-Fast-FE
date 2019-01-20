@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 import {
-  GET_ERRORS, SET_CURRENT_USER, GET_FOOD_MENU,
+  SET_CURRENT_USER, GET_FOOD_MENU,
 } from './types';
 import { setLoader } from './loaderActions';
 

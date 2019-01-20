@@ -59,10 +59,13 @@ class ProductCard extends Component {
             </h5>
           </div>
           <div className='cart-btn-mag'>
-            <button type='button' className='btnaccept' id='id'>Add to Cart </button>
-            <button type='button' id='sub' className='btncomp'>-</button>
-            <input type='number' onChange={this.onChange} id='num' className='btncomp1' name='mealQuantity' disabled />
-            <button type='button' onClick={() => { this.onAdd(Foodmeal); }} id='add' className='btndeny'>+</button>
+            <button type='button' onClick={() => { this.onAdd(Foodmeal); }} className='btnaccept' id='id'>Add to Cart </button>
+            { /* <button type='button' id='sub' className='btncomp'>-</button> */ }
+            { /* <input type='number'
+            onChange={this.onChange}
+            id='num' className='btncomp1' name='mealQuantity' disabled /> */ }
+            {/* <button type='button' onClick={() =>
+             { this.onAdd(Foodmeal); }} id='add' className='btndeny'>+</button> */}
           </div>
         </div>
       </div>

@@ -1,9 +1,13 @@
 /* eslint-disable no-case-declarations */
 import { ADD_TO_CART } from '../actions/types';
 
+const cart = JSON.parse(window.localStorage.getItem('cart')) || {};
+
+
 const initialState = {
   items: null,
   count: 0,
+  cart,
 };
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -11,11 +15,15 @@ export default (state = initialState, action) => {
       const allCartItems = action.payload;
       const total = Object.keys(allCartItems).map((menuId) => {
         const menu = allCartItems[menuId];
-        console.log(menu);
+        // console.log(menu);
         return parseInt(menu.price, 10) * menu.qty;
       }).reduce((curr, prev) => curr + prev, 0);
       console.log(total);
-      return { ...state, cart: action.payload, count: total };
+      return {
+        ...state,
+        cart: action.payload,
+        count: total,
+      };
     default:
       return state;
   }

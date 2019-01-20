@@ -64,75 +64,75 @@ class SignupCard extends Component {
     }
     return (
       <div className='Aligner '>
-          <div className='loginCard '>
-            <div className='aligncnt '>
-              <h2 className='mt'>Create Account </h2>
-              {/* <!-- <h4 style="margin-top:-25px; color:#f2f2f2 ">
-          Get your food in minutes</h4> --> */}
-              <form noValidate onSubmit={this.onSubmit}>
-                <div className='divwidth '>
-                  <div>
-                    <TextFieldGroup
-                      placeholder='First Name'
-                      name='firstname'
-                      value={firstname}
-                      type='firstName'
-                      error={errors.firstname || ''}
-                      onChange={this.onChange}
-                      minLength='5'
-                    />
+        <div className='loginCard '>
+          <div className='aligncnt '>
+            <h2 className='mt'>Create Account </h2>
+            {/* <!-- <h4 style="margin-top:-25px; color:#f2f2f2 ">
+        Get your food in minutes</h4> --> */}
+            <form noValidate onSubmit={this.onSubmit}>
+              <div className='divwidth '>
+                <div>
+                  <TextFieldGroup
+                    placeholder='First Name'
+                    name='firstname'
+                    value={firstname}
+                    type='firstName'
+                    error={errors.firstname || ''}
+                    onChange={this.onChange}
+                    minLength='5'
+                  />
 
-                    <TextFieldGroup
-                      placeholder='Last Name'
-                      name='lastname'
-                      type='lastname'
-                      error={errors.lastname || ''}
-                      value={lastname}
-                      onChange={this.onChange}
-                    />
+                  <TextFieldGroup
+                    placeholder='Last Name'
+                    name='lastname'
+                    type='lastname'
+                    error={errors.lastname || ''}
+                    value={lastname}
+                    onChange={this.onChange}
+                  />
 
-                    <TextFieldGroup
-                      placeholder='email'
-                      name='email'
-                      type='email'
-                      error={errors.email || ''}
-                      value={email}
-                      onChange={this.onChange}
-                    />
+                  <TextFieldGroup
+                    placeholder='email'
+                    name='email'
+                    type='email'
+                    error={errors.email || ''}
+                    value={email}
+                    onChange={this.onChange}
+                  />
 
-                    <TextFieldGroup
-                      placeholder='Password'
-                      name='password'
-                      type='password'
-                      error={errors.password || ''}
-                      value={password}
-                      onChange={this.onChange}
-                    />
+                  <TextFieldGroup
+                    placeholder='Password'
+                    name='password'
+                    type='password'
+                    error={errors.password || ''}
+                    value={password}
+                    onChange={this.onChange}
+                  />
 
-                    <TextFieldGroup
-                      placeholder='Confirm Password'
-                      name='confirmpassword'
-                      type='confirmpassword'
-                      error={errors.confirmpassword || ''}
-                      value={confirmpassword}
-                      onChange={this.onChange}
-                    />
+                  <TextFieldGroup
+                    placeholder='Confirm Password'
+                    name='confirmpassword'
+                    type='confirmpassword'
+                    error={errors.confirmpassword || ''}
+                    value={confirmpassword}
+                    onChange={this.onChange}
+                  />
 
-                    <small>{errors.message}</small>
-                  </div>
-                  <div>
-                    <input
-                      type='submit'
-                      className=' submitbtn btn btn-info btn-block mt-4'
-                    />
-                  </div>
+                  <small>{errors.message}</small>
                 </div>
+                <div>
+                  <input
+                    type='submit'
+                    className=' submitbtn btn btn-info btn-block mt-4'
+                  />
+                </div>
+              </div>
 
-                <div className='bm' />
-              </form>
-            </div>
+              <div className='bm' />
+            </form>
           </div>
         </div>
+      </div>
     );
   }
 }
