@@ -14,11 +14,8 @@ export const addToCart = (menu) => {
   }
 
   if (cartItems[menu.meal_id]) {
-    const newMenu = menu;
-    newMenu.qty += 1;
-    cartItems[newMenu.meal_id] = newMenu;
+    cartItems[menu.meal_id].qty += 1;
     window.localStorage.setItem('cart', JSON.stringify(cartItems));
-
     return { type: ADD_TO_CART, payload: cartItems };
   }
   const newMenu = menu;

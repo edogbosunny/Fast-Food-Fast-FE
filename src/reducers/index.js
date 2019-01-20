@@ -4,6 +4,7 @@ import errorReducer from './errorReducer';
 import foodMenuReducer from './foodMenuReducer';
 import loadingReducer from './loadingReducer';
 import cartReducer from './cartReducer';
+import checkoutOrderReducer from './checkoutOrderReducer';
 
 export default combineReducers({
   auth: authReducer,
@@ -11,4 +12,5 @@ export default combineReducers({
   foodMenu: foodMenuReducer,
   loader: loadingReducer,
   cart: cartReducer,
+  order: checkoutOrderReducer,
 });

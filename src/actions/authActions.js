@@ -12,11 +12,6 @@ export const setCurrentUser = decoded => ({
   payload: decoded,
 });
 
-// export const getAllMeal = mealData => ({
-//   type: GET_FOOD_MENU,
-//   payload: mealData,
-// });
-
 // eslint-disable-next-line import/prefer-default-export
 export const registerUser = userData => (dispatch) => {
   dispatch(setLoader());
