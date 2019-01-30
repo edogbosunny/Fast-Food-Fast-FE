@@ -8,7 +8,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case GET_FOOD_MENU: {
-      console.log('payload====--->', action);
+      // console.log('payload====--->', action);
       return {
         ...state,
         foodMenu: action.payload,

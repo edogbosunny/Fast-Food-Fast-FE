@@ -26,7 +26,7 @@ class SignupCard extends Component {
   componentDidMount() {
     // eslint-disable-next-line react/destructuring-assignment
     if (this.props.auth.isAuthenticated) {
-      console.log(this.props);
+      // console.log(this.props);
       // eslint-disable-next-line react/destructuring-assignment
       this.props.history.push('/');
     }
@@ -50,7 +50,7 @@ class SignupCard extends Component {
     };
     const { registerUser, history } = this.props;
     registerUser(newUser, history);
-    console.log('newuser==>', newUser);
+    // console.log('newuser==>', newUser);
   }
 
   render() {

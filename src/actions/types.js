@@ -4,3 +4,5 @@ export const GET_FOOD_MENU = 'GET_FOOD_MENU';
 export const SET_LOADER = 'SET_LOADER';
 export const CHECKOUT_ORDER = 'CHECKOUT_ORDER';
 export const ADD_TO_CART = 'ADD_TO_CART';
+export const GET_ORDER_HISTORY = 'GET_ORDER_HISTORY';
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';

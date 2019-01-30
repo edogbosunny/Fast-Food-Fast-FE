@@ -1,7 +1,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import ProductCard from '../UI/cards/ProductCard.jsx';
-import ProductTable from '../UI/tables/ProductTable.jsx';
+import ProductTable from '../UI/tables/productTable/ProductTable';
 import '../../styles/ind.css';
 
 class Landing extends Component {

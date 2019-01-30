@@ -8,7 +8,8 @@ import Navbar from '../component/UI/navbar/Navbar.jsx';
 import Footer from '../component/UI/footer/Footer.jsx';
 import Landing from '../component/Pages/Landing.jsx';
 import Login from '../component/Pages/Login.jsx';
-import Signup from '../component/Pages/SignupPage';
+import Signup from '../component/Pages/SignupPage.jsx';
+import OrderHistory from '../component/Pages/OrderHistory.jsx';
 import store from '../store';
 import setAuthToken from '../utils/setAuthToken';
 
@@ -36,6 +37,7 @@ const routes = () => (
       <Switch>
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />
+        <Route exact path='/order-history' component={OrderHistory} />
       </Switch>
       <Footer />
     </div>
