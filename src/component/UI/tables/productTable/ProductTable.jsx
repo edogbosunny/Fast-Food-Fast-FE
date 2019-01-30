@@ -5,9 +5,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import '../../../styles/ind.css';
+import '../../../../styles/ind.css';
 import TableComponent from './TableComponent';
-import { checkoutOrder } from '../../../actions/checkoutAction';
+import { checkoutOrder } from '../../../../actions/checkoutAction';
 
 class ProductTable extends Component {
   constructor() {
@@ -23,7 +23,7 @@ class ProductTable extends Component {
     };
     const token = window.localStorage.getItem('jwtToken');
     if (!token) {
-      console.log(this.props.history);
+      // console.log(this.props.history);
       this.props.history.push('/login');
       console.log('invalid or no token provided');
     }
@@ -31,52 +31,35 @@ class ProductTable extends Component {
       mealOrder.mealId = (orderData.meal_id);
       mealOrder.quantity = JSON.stringify(orderData.meal_id);
 
-      console.log('meal-order', mealOrder);
+      // console.log('meal-order', mealOrder);
       const { checkoutOrder } = this.props;
       return checkoutOrder(mealOrder);
     });
-    console.log(this.props);
   }
 
   render() {
+    // console.log('count---->', this.props);
     return (
       <div className='yoo'>
-        <table>
-          <thead className='cart_summary'>
+        <table className="table table-bordered">
+          <thead className='thead-dark'>
             <tr>
-              <th>
-
-                <span className='float-left'>Your Order</span>
-                <span className='ml-2 mr-2'> | </span>
-                <span>Quantity</span>
-              </th>
-              <th />
+              <th scope="col">Order</th>
+              <th scope="col">Cost</th>
             </tr>
           </thead>
-          <tbody id='cartTable'>
-
+          <tbody>
             <TableComponent />
-
-
+            <tr>
+              <th>Total</th>
+              <td data-label='Total'>{this.props.cart.count}</td>
+            </tr>
+            <tr colSpan='2'>
+              <td>
+                <button type='button' onClick={this.onClick} className='btn btn-success btn-block'>Place Order</button>
+              </td>
+            </tr>
           </tbody>
-          <thead className='cart_summary'>
-            <tr>
-              <th>
-              Total
-              </th>
-              <th id='grandTotal'>
-                { this.props.cartCount }
-              </th>
-            </tr>
-            <tr>
-              <th>
-                <div className='btnCenter'>
-                  <button type='button' onClick={this.onClick} className='checkoutBut'>Proceed to Checkout</button>
-                </div>
-              </th>
-              <th />
-            </tr>
-          </thead>
         </table>
       </div>
     );

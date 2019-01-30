@@ -16,7 +16,7 @@ export const getAllMenu = () => (dispatch) => {
   axios
     .get('https://fast-food-fast-app.herokuapp.com/api/v1/menu')
     .then((res) => {
-      console.log('axios=> get menu', res);
+      // console.log('axios=> get menu', res);
       dispatch({
         type: GET_FOOD_MENU,
         payload: res.data,

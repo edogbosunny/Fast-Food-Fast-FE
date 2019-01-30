@@ -5,10 +5,10 @@ import { connect } from 'react-redux';
 
 const TableComponent = (props) => {
   const { cart } = props.cart;
-  console.log('tableprops====>', cart);
+  // console.log('tableprops====>', cart);
   return Object.values(cart).map((orderData) => {
     // const menu = allCartItems[menuId];
-    console.log(orderData.meal);
+    // console.log(orderData.meal);
     return (
       <tr key={orderData.meal_id}>
         <td>

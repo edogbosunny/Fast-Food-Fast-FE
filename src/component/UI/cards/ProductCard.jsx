@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-shadow */
@@ -6,7 +7,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 // import PropTypes from 'prop-types';
-import { getAllMenu } from '../../../actions/foodMenuReducer';
+import { getAllMenu } from '../../../actions/foodMenuAction';
 import { addToCart } from '../../../actions/cartActions';
 import '../../../styles/ind.css';
 import Spinner from '../../../utils/Spinner';
@@ -19,7 +20,7 @@ class ProductCard extends Component {
     };
     this.onChange = this.onChange.bind(this);
     this.renderItems = this.renderItems.bind(this);
-    console.log(this.state, '----state-->');
+    // console.log(this.state, '----state-->');
   }
 
   componentDidMount() {
@@ -75,7 +76,7 @@ class ProductCard extends Component {
   render() {
     const { loader } = this.props;
     const { loading } = loader;
-    console.log(this.props);
+    // console.log(this.props);
     if (loading) {
       return (<Spinner />);
     }
