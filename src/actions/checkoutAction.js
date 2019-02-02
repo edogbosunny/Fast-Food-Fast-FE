@@ -4,18 +4,20 @@ import { CHECKOUT_ORDER } from './types';
 
 const token = window.localStorage.getItem('jwtToken');
 
-export const checkoutOrder = orderData => (dispatch) => {
-  axios({
-    method: 'post',
-    url: 'https://fast-food-fast-app.herokuapp.com/api/v1/orders',
-    data: orderData,
-    headers: { 'x-access-token': token },
-  }).then((res) => {
+export const checkoutOrder = orderData => async (dispatch) => {
+  try {
+    const res = await axios({
+      method: 'post',
+      url: 'https://fast-food-fast-app.herokuapp.com/api/v1/orders',
+      data: orderData,
+      headers: { 'x-access-token': token },
+    });
     dispatch({
       type: CHECKOUT_ORDER,
       payload: res.data,
     });
     return null;
-    // console.log(res);
-  }).catch(err => console.log(err));
+  } catch (err) {
+    return console.log(err);
+  }
 };

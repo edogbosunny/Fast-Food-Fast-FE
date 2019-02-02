@@ -9,7 +9,7 @@ import '../../../../styles/ind.css';
 import TableComponent from './TableComponent';
 import { checkoutOrder } from '../../../../actions/checkoutAction';
 
-class ProductTable extends Component {
+export class ProductTable extends Component {
   constructor() {
     super();
 

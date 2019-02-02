@@ -12,7 +12,7 @@ import { addToCart } from '../../../actions/cartActions';
 import '../../../styles/ind.css';
 import Spinner from '../../../utils/Spinner';
 
-class ProductCard extends Component {
+export class ProductCard extends Component {
   constructor() {
     super();
     this.state = {

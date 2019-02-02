@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import jwtDecode from 'jwt-decode';
 
@@ -27,7 +27,7 @@ if (window.localStorage.jwtToken) {
   }
 }
 
-const routes = () => (
+export const routes = () => (
   <Provider store={store}>
     <div>
       <Navbar />
@@ -45,4 +45,4 @@ const routes = () => (
 );
 
 
-export default routes;
+export default withRouter(routes);
