@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login page should mount the login page 1`] = `
+<div
+  className="bg"
+>
+  <withRouter(Connect(LoginCard)) />
+</div>
+`;
