@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 /* eslint-disable no-shadow */
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/prop-types */
@@ -67,10 +68,10 @@ export class ProductTable extends Component {
 }
 
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   cartCount: state.cart.count,
   cart: state.cart,
   order: state.order,
 });
 
-export default withRouter(connect(mapStateToProps, { checkoutOrder })(ProductTable));
+export default connect(mapStateToProps, { checkoutOrder })(withRouter(ProductTable));

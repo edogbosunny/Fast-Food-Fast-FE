@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Component should shallow the footer component! 1`] = `
+<footer
+  className="footer"
+>
+  <p
+    className="ash"
+  >
+    An Andela project by Edogbo Sunny | ©
+    2019
+  </p>
+</footer>
+`;

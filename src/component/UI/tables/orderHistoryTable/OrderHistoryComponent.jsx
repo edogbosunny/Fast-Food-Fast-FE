@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class OrderHistoryComponent extends Component {
+export class OrderHistoryComponent extends Component {
   render() {
     const { orderHistory: { orderHistory } } = this.props;
     return orderHistory.data.map(orderedItems => (
@@ -27,7 +27,7 @@ class OrderHistoryComponent extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   orderHistory: state.orderHistory,
 });
 

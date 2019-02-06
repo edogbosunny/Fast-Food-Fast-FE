@@ -9,9 +9,9 @@ const miniCssPlugin = new MiniCssExtractPlugin({
 });
 
 module.exports = {
-  entry: {
-    main: './src/index.jsx',
-  },
+  entry: ['@babel/polyfill',
+    './src/index.jsx',
+  ],
   resolve: {
     extensions: ['.jsx', '.js', '.json'],
   },

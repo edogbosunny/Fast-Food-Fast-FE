@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`orderHistore component test-suit should match snapshot 1`] = `
+<div
+  className="yoo"
+>
+  <table
+    className="table table-bordered"
+  >
+    <thead
+      className="thead-dark"
+    >
+      <tr>
+        <th
+          scope="col"
+        >
+          Order
+        </th>
+        <th
+          scope="col"
+        >
+          Cost
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <Connect(TableComponent) />
+      <tr>
+        <th>
+          Total
+        </th>
+        <td
+          data-label="Total"
+        >
+          800
+        </td>
+      </tr>
+      <tr
+        colSpan="2"
+      >
+        <td>
+          <button
+            className="btn btn-success btn-block"
+            onClick={[Function]}
+            type="button"
+          >
+            Place Order
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

@@ -40,6 +40,8 @@ export const registerUser = userData => (dispatch) => {
 export const loginUser = userData => dispatch => axios.post('https://fast-food-fast-app.herokuapp.com/api/v1/auth/login', userData)
   .then((res) => {
     const { token } = res.data.data;
+    // console.log('token===>>>', token);
+    // console.log('window==>>>'. window)
     window.localStorage.setItem('jwtToken', token);
     setAuthToken(token);
     const decoded = jwtDecode(token);

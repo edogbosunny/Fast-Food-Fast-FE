@@ -10,7 +10,7 @@ import { loginUser } from '../../../actions/authActions';
 import TextFieldGroup from '../textField/TextFieldGroup.jsx';
 
 
-class LoginCard extends Component {
+export class LoginCard extends Component {
   constructor() {
     super();
     this.state = {
@@ -22,6 +22,7 @@ class LoginCard extends Component {
   }
 
   componentDidMount() {
+    // console.log('---->props', this.props);
     // eslint-disable-next-line react/destructuring-assignment
     if (this.props.auth.isAuthenticated) {
       // eslint-disable-next-line react/destructuring-assignment
@@ -55,6 +56,7 @@ class LoginCard extends Component {
   }
 
   render() {
+    console.log('------?>', this.state);
     const { email, password } = this.state;
     const { errors } = this.props;
     return (
@@ -102,9 +104,10 @@ class LoginCard extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors,
 });
 
-export default withRouter(connect(mapStateToProps, { loginUser })(LoginCard));
+// export default withRouter(connect(mapStateToProps, { loginUser })(LoginCard));
+export default connect(mapStateToProps, { loginUser })(withRouter(LoginCard));

@@ -18,9 +18,7 @@ export class ProductCard extends Component {
     this.state = {
       mealQuantity: 0,
     };
-    this.onChange = this.onChange.bind(this);
     this.renderItems = this.renderItems.bind(this);
-    // console.log(this.state, '----state-->');
   }
 
   componentDidMount() {
@@ -31,14 +29,9 @@ export class ProductCard extends Component {
     this.props.addToCart(menu);
   }
 
-  onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
-    // console.log(this.state);
-  }
-
   renderItems() {
     const { data } = this.props.foodMenu.foodMenu;
-
+    // console.log(this.props);
     return data.map(Foodmeal => (
       <div key={Foodmeal.meal_id}>
         {/* cart cards would be here */}
@@ -61,12 +54,6 @@ export class ProductCard extends Component {
           </div>
           <div className='cart-btn-mag'>
             <button type='button' onClick={() => { this.onAdd(Foodmeal); }} className='btnaccept' id='id'>Add to Cart </button>
-            { /* <button type='button' id='sub' className='btncomp'>-</button> */ }
-            { /* <input type='number'
-            onChange={this.onChange}
-            id='num' className='btncomp1' name='mealQuantity' disabled /> */ }
-            {/* <button type='button' onClick={() =>
-             { this.onAdd(Foodmeal); }} id='add' className='btndeny'>+</button> */}
           </div>
         </div>
       </div>
@@ -89,11 +76,11 @@ export class ProductCard extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   auth: state.auth,
   foodMenu: state.foodMenu,
   loader: state.loader,
   mealQuantity: state.mealQuantity,
 });
 
-export default withRouter(connect(mapStateToProps, { getAllMenu, addToCart })(ProductCard));
+export default connect(mapStateToProps, { getAllMenu, addToCart })(withRouter(ProductCard));

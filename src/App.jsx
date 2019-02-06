@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, withRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './routes/routes';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -15,4 +15,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+export default App;

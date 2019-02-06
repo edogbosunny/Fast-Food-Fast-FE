@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from '../src/App';
 
@@ -10,7 +10,7 @@ jest.mock('../src/img/spinner.gif');
 describe('App', () => {
   // jest.mock(spinnerImage);
   test('should match snapshot', () => {
-    const wrapper = mount(
+    const wrapper = shallow(
       <Router>
         <App />
       </Router>,

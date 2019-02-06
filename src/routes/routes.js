@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import jwtDecode from 'jwt-decode';
 
@@ -29,20 +29,22 @@ if (window.localStorage.jwtToken) {
 
 export const routes = () => (
   <Provider store={store}>
-    <div>
-      <Navbar />
-      <Switch>
-        <Route exact path='/' component={Landing} />
-      </Switch>
-      <Switch>
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/signup' component={Signup} />
-        <Route exact path='/order-history' component={OrderHistory} />
-      </Switch>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path='/' component={Landing} />
+        </Switch>
+        <Switch>
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/signup' component={Signup} />
+          <Route exact path='/order-history' component={OrderHistory} />
+        </Switch>
+        <Footer />
+      </div>
+    </BrowserRouter>
   </Provider>
 );
 
 
-export default withRouter(routes);
+export default routes;

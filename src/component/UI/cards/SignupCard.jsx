@@ -137,7 +137,7 @@ export class SignupCard extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors,
   loader: state.loader,

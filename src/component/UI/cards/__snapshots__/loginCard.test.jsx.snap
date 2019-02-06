@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Container should mount the login page Yeah! 1`] = `
+<LoginCard
+  auth={
+    Object {
+      "isAuthenticated": true,
+      "loading": null,
+      "user": Object {
+        "exp": 1549525677,
+        "iat": 1549439277,
+        "id": 1,
+      },
+    }
+  }
+  errors={
+    Object {
+      "email": "",
+      "isAuthenticated": false,
+      "loading": null,
+      "message": "",
+      "password": "",
+    }
+  }
+  history={
+    Object {
+      "action": "PUSH",
+      "push": [MockFunction] {
+        "calls": Array [
+          Array [
+            "/",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      },
+    }
+  }
+  location={
+    Object {
+      "hash": "",
+      "pathname": "/login",
+      "search": "",
+    }
+  }
+  loginUser={[MockFunction]}
+  match={
+    Object {
+      "isExact": true,
+      "path": "/login",
+      "url": "/login",
+    }
+  }
+  user={Object {}}
+>
+  <div
+    className="Aligner "
+  >
+    <div
+      className="loginCard "
+    >
+      <div
+        className="aligncnt "
+      >
+        <h2
+          className="mt"
+        >
+          Login To Your Account 
+        </h2>
+        <form
+          noValidate={true}
+          onSubmit={[Function]}
+        >
+          <div
+            className="divwidth "
+          >
+            <div>
+              <TextFieldGroup
+                error=""
+                minLength="5"
+                name="email"
+                onChange={[Function]}
+                placeholder="Email Address"
+                type="text"
+                value=""
+              >
+                <div
+                  className="txtwidth form-style-1"
+                >
+                  <input
+                    className="form-control"
+                    minLength="5"
+                    name="email"
+                    onChange={[Function]}
+                    placeholder="Email Address"
+                    required={true}
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </TextFieldGroup>
+              <TextFieldGroup
+                error=""
+                name="password"
+                onChange={[Function]}
+                placeholder="Password"
+                type="password"
+                value=""
+              >
+                <div
+                  className="txtwidth form-style-1"
+                >
+                  <input
+                    className="form-control"
+                    name="password"
+                    onChange={[Function]}
+                    placeholder="Password"
+                    required={true}
+                    type="password"
+                    value=""
+                  />
+                </div>
+              </TextFieldGroup>
+              <small />
+            </div>
+            <div>
+              <input
+                className=" submitbtn btn btn-info btn-block mt-4"
+                type="submit"
+              />
+            </div>
+          </div>
+          <div
+            className="bm"
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+</LoginCard>
+`;
