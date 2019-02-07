@@ -1,8 +1,8 @@
+/* eslint-disable import/no-named-as-default */
 import React from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import jwtDecode from 'jwt-decode';
-
 import { setCurrentUser, logoutUser } from '../actions/authActions';
 import Navbar from '../component/UI/navbar/Navbar.jsx';
 import Footer from '../component/UI/footer/Footer.jsx';

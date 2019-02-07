@@ -5,14 +5,17 @@ export const props = {
     loading: false,
     orderHistory: {
       count: 30,
-      data: [{}],
+      mealItem: [{}],
       message: 'Food order retrieved succesfully',
     },
+    getAllOrders: jest.fn(),
+    getUserOrderById: jest.fn(),
   },
 };
 
 export const tableProps = {
   getAllOrders: jest.fn(),
+  getUserOrderById: jest.fn(),
   orderHistory: {
     loading: false,
     orderHistory: {

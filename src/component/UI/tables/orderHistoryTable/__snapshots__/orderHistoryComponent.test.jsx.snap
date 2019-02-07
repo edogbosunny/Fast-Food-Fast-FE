@@ -15,15 +15,8 @@ exports[`orderHistore component test-suit should match snapshot 1`] = `
      
     item(s)
     <button
-      className="btn btn-success btn-sm"
-      data-target="#myModal"
-      data-toggle="modal"
-      type="button"
-    >
-       View Order(s)
-    </button>
-    <button
       className="btn btn-danger btn-sm m-1"
+      onClick={[Function]}
       type="button"
     >
        Delete Order(s)
