@@ -7,7 +7,7 @@ import mockData from '../../src/__mocks__/mockData';
 
 const middleware = [thunk];
 const mockStore = configureMockStore(middleware);
-// const store = mockStore({});
+const store = mockStore({});
 
 window.localStorage = localStorage;
 // console.log('localstorage=====>>>>>>>', window);
@@ -19,7 +19,7 @@ describe('Authentication suit', () => {
   afterEach(() => moxios.uninstall());
   describe('lAuthentication Action', () => {
     it('should login an existing user', () => {
-      const store = mockStore({});
+      // const store = mockStore({});
       moxios.wait(() => {
         const req = moxios.requests.mostRecent();
         req.respondWith({

@@ -14,17 +14,19 @@ export const setCurrentUser = decoded => ({
 });
 
 // eslint-disable-next-line import/prefer-default-export
-export const registerUser = userData => (dispatch) => {
+export const registerUser = (userData, history) => (dispatch) => {
   dispatch(setLoader());
   return axios
     .post('https://fast-food-fast-app.herokuapp.com/api/v1/auth/signup', userData)
     // eslint-disable-next-line no-unused-vars
     .then((res) => {
+      // console.log(res);
       const { token } = res.data.data;
       window.localStorage.setItem('jwtToken', token);
       setAuthToken(token);
       const decoded = jwtDecode(token);
       dispatch(setCurrentUser(decoded));
+      history.push('/');
       dispatch(setLoader());
     })
     // .catch(err => console.log(err.response.data.data.errors.email))
