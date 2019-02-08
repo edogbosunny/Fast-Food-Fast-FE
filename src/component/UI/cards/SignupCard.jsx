@@ -112,7 +112,7 @@ export class SignupCard extends Component {
                   <TextFieldGroup
                     placeholder='Confirm Password'
                     name='confirmpassword'
-                    type='confirmpassword'
+                    type='password'
                     error={errors.confirmpassword || ''}
                     value={confirmpassword}
                     onChange={this.onChange}
