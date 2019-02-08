@@ -26,7 +26,7 @@ exports[`Login Container should mount the login page Yeah! 1`] = `
       Available Order
     </h1>
   </div>
-  <Connect(withRouter(ProductTable)) />
-  <Connect(withRouter(ProductCard)) />
+  <Connect(withRouter(WithAlert(ProductTable))) />
+  <Connect(withRouter(WithAlert(ProductCard))) />
 </div>
 `;

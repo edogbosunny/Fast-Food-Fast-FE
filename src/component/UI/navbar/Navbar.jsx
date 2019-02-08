@@ -26,8 +26,13 @@ export class Navbar extends Component {
     const authLinks = (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
+          <Link to='/order-history' className="nav-link">
+      Order History
+          </Link>
+        </li>
+        <li className="nav-item">
           <Link to='' onClick={this.onLogoutClick.bind(this)} className="nav-link">
-          Logout
+        Logout
           </Link>
         </li>
       </ul>
@@ -36,7 +41,7 @@ export class Navbar extends Component {
     const guestLinks = (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
-          <Link to="/register" className="nav-link">
+          <Link to="/signup" className="nav-link">
           Sign Up
           </Link>
         </li>

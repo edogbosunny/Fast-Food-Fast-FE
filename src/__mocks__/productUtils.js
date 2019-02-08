@@ -21,6 +21,11 @@ export const props = {
   history: {
     push: jest.fn(),
   },
+  alert: {
+    show: jest.fn(),
+    error: jest.fn(),
+    success: jest.fn(),
+  },
   loader: { loading: false },
   mealQuantity: undefined,
   staticContext: undefined,

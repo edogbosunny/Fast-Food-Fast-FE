@@ -2,6 +2,13 @@
 
 exports[`App should match snapshot 1`] = `
 <routes
+  alert={
+    Object {
+      "error": [MockFunction],
+      "show": [MockFunction],
+      "success": [MockFunction],
+    }
+  }
   cart={
     Object {
       "cart": Object {
@@ -41,50 +48,236 @@ exports[`App should match snapshot 1`] = `
       }
     }
   >
-    <BrowserRouter>
-      <Router
-        history={
-          Object {
-            "action": "POP",
-            "block": [Function],
-            "createHref": [Function],
-            "go": [Function],
-            "goBack": [Function],
-            "goForward": [Function],
-            "length": 1,
-            "listen": [Function],
-            "location": Object {
-              "hash": "",
-              "pathname": "/",
-              "search": "",
-              "state": undefined,
-            },
-            "push": [Function],
-            "replace": [Function],
+    <Provider
+      offset="30px"
+      position="top right"
+      template={[Function]}
+      timeout={5000}
+      transition="scale"
+      type="info"
+      zIndex={100}
+    >
+      <BrowserRouter>
+        <Router
+          history={
+            Object {
+              "action": "POP",
+              "block": [Function],
+              "createHref": [Function],
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "length": 1,
+              "listen": [Function],
+              "location": Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              },
+              "push": [Function],
+              "replace": [Function],
+            }
           }
-        }
-      >
-        <div>
-          <Connect(withRouter(Navbar))>
-            <withRouter(Navbar)
-              auth={
-                Object {
-                  "isAuthenticated": false,
-                  "loading": false,
-                  "user": Object {},
-                }
-              }
-              logoutUser={[Function]}
-            >
-              <Route>
-                <Navbar
-                  auth={
-                    Object {
-                      "isAuthenticated": false,
-                      "loading": false,
-                      "user": Object {},
-                    }
+        >
+          <div>
+            <Connect(withRouter(Navbar))>
+              <withRouter(Navbar)
+                auth={
+                  Object {
+                    "isAuthenticated": false,
+                    "loading": false,
+                    "user": Object {},
                   }
+                }
+                logoutUser={[Function]}
+              >
+                <Route>
+                  <Navbar
+                    auth={
+                      Object {
+                        "isAuthenticated": false,
+                        "loading": false,
+                        "user": Object {},
+                      }
+                    }
+                    history={
+                      Object {
+                        "action": "POP",
+                        "block": [Function],
+                        "createHref": [Function],
+                        "go": [Function],
+                        "goBack": [Function],
+                        "goForward": [Function],
+                        "length": 1,
+                        "listen": [Function],
+                        "location": Object {
+                          "hash": "",
+                          "pathname": "/",
+                          "search": "",
+                          "state": undefined,
+                        },
+                        "push": [Function],
+                        "replace": [Function],
+                      }
+                    }
+                    location={
+                      Object {
+                        "hash": "",
+                        "pathname": "/",
+                        "search": "",
+                        "state": undefined,
+                      }
+                    }
+                    logoutUser={[Function]}
+                    match={
+                      Object {
+                        "isExact": true,
+                        "params": Object {},
+                        "path": "/",
+                        "url": "/",
+                      }
+                    }
+                  >
+                    <nav
+                      className="navbar navbar-expand-sm navbar-dark nav-dark mb-4"
+                    >
+                      <div
+                        className="container"
+                      >
+                        <Link
+                          className="logo navbar-brand"
+                          replace={false}
+                          to="/"
+                        >
+                          <a
+                            className="logo navbar-brand"
+                            href="/"
+                            onClick={[Function]}
+                          />
+                        </Link>
+                        <button
+                          className="navbar-toggler"
+                          data-target="#mobile-nav"
+                          data-toggle="collapse"
+                          type="button"
+                        >
+                          <span
+                            className="navbar-toggler-icon"
+                          />
+                        </button>
+                        <div
+                          className="collapse navbar-collapse"
+                          id="mobile-nav"
+                        >
+                          <ul
+                            className="navbar-nav mr-auto nav-tabs"
+                          >
+                            <li
+                              className="nav-item"
+                            >
+                              <Link
+                                className="nav-link  m-auto"
+                                replace={false}
+                                to="/"
+                              >
+                                <a
+                                  className="nav-link  m-auto"
+                                  href="/"
+                                  onClick={[Function]}
+                                >
+                                   
+                                  Home
+                                </a>
+                              </Link>
+                            </li>
+                            <li
+                              className="nav-item "
+                            >
+                              <Link
+                                className="nav-link m-auto"
+                                replace={false}
+                                to="/about"
+                              >
+                                <a
+                                  className="nav-link m-auto"
+                                  href="/about"
+                                  onClick={[Function]}
+                                >
+                                   
+                                  About
+                                </a>
+                              </Link>
+                            </li>
+                          </ul>
+                          <ul
+                            className="navbar-nav ml-auto"
+                          >
+                            <li
+                              className="nav-item"
+                            >
+                              <Link
+                                className="nav-link"
+                                replace={false}
+                                to="/signup"
+                              >
+                                <a
+                                  className="nav-link"
+                                  href="/signup"
+                                  onClick={[Function]}
+                                >
+                                  Sign Up
+                                </a>
+                              </Link>
+                            </li>
+                            <li
+                              className="nav-item"
+                            >
+                              <Link
+                                className="nav-link"
+                                replace={false}
+                                to="login"
+                              >
+                                <a
+                                  className="nav-link"
+                                  href="/login"
+                                  onClick={[Function]}
+                                >
+                                  Login
+                                </a>
+                              </Link>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </nav>
+                  </Navbar>
+                </Route>
+              </withRouter(Navbar)>
+            </Connect(withRouter(Navbar))>
+            <Switch>
+              <Route
+                component={[Function]}
+                computedMatch={
+                  Object {
+                    "isExact": true,
+                    "params": Object {},
+                    "path": "/",
+                    "url": "/",
+                  }
+                }
+                exact={true}
+                location={
+                  Object {
+                    "hash": "",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  }
+                }
+                path="/"
+              >
+                <Landing
                   history={
                     Object {
                       "action": "POP",
@@ -113,7 +306,6 @@ exports[`App should match snapshot 1`] = `
                       "state": undefined,
                     }
                   }
-                  logoutUser={[Function]}
                   match={
                     Object {
                       "isExact": true,
@@ -123,163 +315,434 @@ exports[`App should match snapshot 1`] = `
                     }
                   }
                 >
-                  <nav
-                    className="navbar navbar-expand-sm navbar-dark nav-dark mb-4"
-                  >
+                  <div>
                     <div
-                      className="container"
+                      className="bg-pics"
+                    />
+                    <div
+                      className="caption-div "
                     >
-                      <Link
-                        className="logo navbar-brand"
-                        replace={false}
-                        to="/"
+                      <h1
+                        className="caption mb-4 mt-5"
                       >
-                        <a
-                          className="logo navbar-brand"
-                          href="/"
-                          onClick={[Function]}
-                        />
-                      </Link>
-                      <button
-                        className="navbar-toggler"
-                        data-target="#mobile-nav"
-                        data-toggle="collapse"
-                        type="button"
+                        Order Food Fast!
+                      </h1>
+                      <p
+                        className="caption-small lead"
                       >
-                        <span
-                          className="navbar-toggler-icon"
-                        />
-                      </button>
-                      <div
-                        className="collapse navbar-collapse"
-                        id="mobile-nav"
-                      >
-                        <ul
-                          className="navbar-nav mr-auto nav-tabs"
-                        >
-                          <li
-                            className="nav-item"
-                          >
-                            <Link
-                              className="nav-link  m-auto"
-                              replace={false}
-                              to="/"
-                            >
-                              <a
-                                className="nav-link  m-auto"
-                                href="/"
-                                onClick={[Function]}
-                              >
-                                 
-                                Home
-                              </a>
-                            </Link>
-                          </li>
-                          <li
-                            className="nav-item "
-                          >
-                            <Link
-                              className="nav-link m-auto"
-                              replace={false}
-                              to="/about"
-                            >
-                              <a
-                                className="nav-link m-auto"
-                                href="/about"
-                                onClick={[Function]}
-                              >
-                                 
-                                About
-                              </a>
-                            </Link>
-                          </li>
-                        </ul>
-                        <ul
-                          className="navbar-nav ml-auto"
-                        >
-                          <li
-                            className="nav-item"
-                          >
-                            <Link
-                              className="nav-link"
-                              replace={false}
-                              to="/register"
-                            >
-                              <a
-                                className="nav-link"
-                                href="/register"
-                                onClick={[Function]}
-                              >
-                                Sign Up
-                              </a>
-                            </Link>
-                          </li>
-                          <li
-                            className="nav-item"
-                          >
-                            <Link
-                              className="nav-link"
-                              replace={false}
-                              to="login"
-                            >
-                              <a
-                                className="nav-link"
-                                href="/login"
-                                onClick={[Function]}
-                              >
-                                Login
-                              </a>
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
+                        Get your food in minutes!
+                      </p>
                     </div>
-                  </nav>
-                </Navbar>
+                    <div>
+                      <h1
+                        className="order"
+                      >
+                        Available Order
+                      </h1>
+                    </div>
+                    <Connect(withRouter(WithAlert(ProductTable)))>
+                      <withRouter(WithAlert(ProductTable))
+                        cart={
+                          Object {
+                            "cart": Object {},
+                            "count": 0,
+                            "items": null,
+                          }
+                        }
+                        cartCount={0}
+                        checkoutOrder={[Function]}
+                        order={
+                          Object {
+                            "order": Object {},
+                          }
+                        }
+                      >
+                        <Route>
+                          <WithAlert(ProductTable)
+                            cart={
+                              Object {
+                                "cart": Object {},
+                                "count": 0,
+                                "items": null,
+                              }
+                            }
+                            cartCount={0}
+                            checkoutOrder={[Function]}
+                            history={
+                              Object {
+                                "action": "POP",
+                                "block": [Function],
+                                "createHref": [Function],
+                                "go": [Function],
+                                "goBack": [Function],
+                                "goForward": [Function],
+                                "length": 1,
+                                "listen": [Function],
+                                "location": Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                                "push": [Function],
+                                "replace": [Function],
+                              }
+                            }
+                            location={
+                              Object {
+                                "hash": "",
+                                "pathname": "/",
+                                "search": "",
+                                "state": undefined,
+                              }
+                            }
+                            match={
+                              Object {
+                                "isExact": true,
+                                "params": Object {},
+                                "path": "/",
+                                "url": "/",
+                              }
+                            }
+                            order={
+                              Object {
+                                "order": Object {},
+                              }
+                            }
+                          >
+                            <ProductTable
+                              alert={
+                                Object {
+                                  "alerts": Array [],
+                                  "error": [Function],
+                                  "info": [Function],
+                                  "remove": [Function],
+                                  "root": <div>
+                                    <div
+                                      style="position: fixed; top: 0px; right: 0px; z-index: 100;"
+                                    >
+                                      <div />
+                                    </div>
+                                  </div>,
+                                  "show": [Function],
+                                  "success": [Function],
+                                }
+                              }
+                              cart={
+                                Object {
+                                  "cart": Object {},
+                                  "count": 0,
+                                  "items": null,
+                                }
+                              }
+                              cartCount={0}
+                              checkoutOrder={[Function]}
+                              history={
+                                Object {
+                                  "action": "POP",
+                                  "block": [Function],
+                                  "createHref": [Function],
+                                  "go": [Function],
+                                  "goBack": [Function],
+                                  "goForward": [Function],
+                                  "length": 1,
+                                  "listen": [Function],
+                                  "location": Object {
+                                    "hash": "",
+                                    "pathname": "/",
+                                    "search": "",
+                                    "state": undefined,
+                                  },
+                                  "push": [Function],
+                                  "replace": [Function],
+                                }
+                              }
+                              location={
+                                Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                }
+                              }
+                              match={
+                                Object {
+                                  "isExact": true,
+                                  "params": Object {},
+                                  "path": "/",
+                                  "url": "/",
+                                }
+                              }
+                              order={
+                                Object {
+                                  "order": Object {},
+                                }
+                              }
+                            >
+                              <div
+                                className="yoo"
+                              >
+                                <table
+                                  className="table table-bordered"
+                                >
+                                  <thead
+                                    className="thead-dark"
+                                  >
+                                    <tr>
+                                      <th
+                                        scope="col"
+                                      >
+                                        Order
+                                      </th>
+                                      <th
+                                        scope="col"
+                                      >
+                                        Cost
+                                      </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <Connect(TableComponent)>
+                                      <TableComponent
+                                        cart={
+                                          Object {
+                                            "cart": Object {},
+                                            "count": 0,
+                                            "items": null,
+                                          }
+                                        }
+                                        loading={
+                                          Object {
+                                            "loading": true,
+                                          }
+                                        }
+                                        removeFromCart={[Function]}
+                                      />
+                                    </Connect(TableComponent)>
+                                    <tr>
+                                      <th>
+                                        Total
+                                      </th>
+                                      <td
+                                        data-label="Total"
+                                      >
+                                        0
+                                      </td>
+                                    </tr>
+                                    <tr
+                                      colSpan="2"
+                                    >
+                                      <td>
+                                        <button
+                                          className="btn btn-success btn-block"
+                                          onClick={[Function]}
+                                          type="button"
+                                        >
+                                          Place Order
+                                        </button>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </ProductTable>
+                          </WithAlert(ProductTable)>
+                        </Route>
+                      </withRouter(WithAlert(ProductTable))>
+                    </Connect(withRouter(WithAlert(ProductTable)))>
+                    <Connect(withRouter(WithAlert(ProductCard)))>
+                      <withRouter(WithAlert(ProductCard))
+                        addToCart={[Function]}
+                        auth={
+                          Object {
+                            "isAuthenticated": false,
+                            "loading": false,
+                            "user": Object {},
+                          }
+                        }
+                        foodMenu={
+                          Object {
+                            "foodMenu": Object {
+                              "data": Array [],
+                            },
+                          }
+                        }
+                        getAllMenu={[Function]}
+                        loader={
+                          Object {
+                            "loading": true,
+                          }
+                        }
+                      >
+                        <Route>
+                          <WithAlert(ProductCard)
+                            addToCart={[Function]}
+                            auth={
+                              Object {
+                                "isAuthenticated": false,
+                                "loading": false,
+                                "user": Object {},
+                              }
+                            }
+                            foodMenu={
+                              Object {
+                                "foodMenu": Object {
+                                  "data": Array [],
+                                },
+                              }
+                            }
+                            getAllMenu={[Function]}
+                            history={
+                              Object {
+                                "action": "POP",
+                                "block": [Function],
+                                "createHref": [Function],
+                                "go": [Function],
+                                "goBack": [Function],
+                                "goForward": [Function],
+                                "length": 1,
+                                "listen": [Function],
+                                "location": Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                                "push": [Function],
+                                "replace": [Function],
+                              }
+                            }
+                            loader={
+                              Object {
+                                "loading": true,
+                              }
+                            }
+                            location={
+                              Object {
+                                "hash": "",
+                                "pathname": "/",
+                                "search": "",
+                                "state": undefined,
+                              }
+                            }
+                            match={
+                              Object {
+                                "isExact": true,
+                                "params": Object {},
+                                "path": "/",
+                                "url": "/",
+                              }
+                            }
+                          >
+                            <ProductCard
+                              addToCart={[Function]}
+                              alert={
+                                Object {
+                                  "alerts": Array [],
+                                  "error": [Function],
+                                  "info": [Function],
+                                  "remove": [Function],
+                                  "root": <div>
+                                    <div
+                                      style="position: fixed; top: 0px; right: 0px; z-index: 100;"
+                                    >
+                                      <div />
+                                    </div>
+                                  </div>,
+                                  "show": [Function],
+                                  "success": [Function],
+                                }
+                              }
+                              auth={
+                                Object {
+                                  "isAuthenticated": false,
+                                  "loading": false,
+                                  "user": Object {},
+                                }
+                              }
+                              foodMenu={
+                                Object {
+                                  "foodMenu": Object {
+                                    "data": Array [],
+                                  },
+                                }
+                              }
+                              getAllMenu={[Function]}
+                              history={
+                                Object {
+                                  "action": "POP",
+                                  "block": [Function],
+                                  "createHref": [Function],
+                                  "go": [Function],
+                                  "goBack": [Function],
+                                  "goForward": [Function],
+                                  "length": 1,
+                                  "listen": [Function],
+                                  "location": Object {
+                                    "hash": "",
+                                    "pathname": "/",
+                                    "search": "",
+                                    "state": undefined,
+                                  },
+                                  "push": [Function],
+                                  "replace": [Function],
+                                }
+                              }
+                              loader={
+                                Object {
+                                  "loading": true,
+                                }
+                              }
+                              location={
+                                Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                }
+                              }
+                              match={
+                                Object {
+                                  "isExact": true,
+                                  "params": Object {},
+                                  "path": "/",
+                                  "url": "/",
+                                }
+                              }
+                            >
+                              <Spinner>
+                                <div>
+                                  <img
+                                    alt="LOADING..."
+                                    src="test-file-stub"
+                                    style={
+                                      Object {
+                                        "display": "block",
+                                        "margin": "auto",
+                                        "width": "200px",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </Spinner>
+                            </ProductCard>
+                          </WithAlert(ProductCard)>
+                        </Route>
+                      </withRouter(WithAlert(ProductCard))>
+                    </Connect(withRouter(WithAlert(ProductCard)))>
+                  </div>
+                </Landing>
               </Route>
-            </withRouter(Navbar)>
-          </Connect(withRouter(Navbar))>
-          <Switch>
-            <Route
-              component={[Function]}
-              computedMatch={
-                Object {
-                  "isExact": true,
-                  "params": Object {},
-                  "path": "/",
-                  "url": "/",
-                }
-              }
-              exact={true}
-              location={
-                Object {
-                  "hash": "",
-                  "pathname": "/",
-                  "search": "",
-                  "state": undefined,
-                }
-              }
-              path="/"
-            >
-              <Landing
-                history={
+            </Switch>
+            <Switch>
+              <Route
+                component={[Function]}
+                computedMatch={
                   Object {
-                    "action": "POP",
-                    "block": [Function],
-                    "createHref": [Function],
-                    "go": [Function],
-                    "goBack": [Function],
-                    "goForward": [Function],
-                    "length": 1,
-                    "listen": [Function],
-                    "location": Object {
-                      "hash": "",
-                      "pathname": "/",
-                      "search": "",
-                      "state": undefined,
-                    },
-                    "push": [Function],
-                    "replace": [Function],
+                    "isExact": true,
+                    "params": Object {},
+                    "path": "/",
+                    "url": "/",
                   }
                 }
                 location={
@@ -290,303 +753,124 @@ exports[`App should match snapshot 1`] = `
                     "state": undefined,
                   }
                 }
-                match={
-                  Object {
-                    "isExact": true,
-                    "params": Object {},
-                    "path": "/",
-                    "url": "/",
+              >
+                <NotFound
+                  history={
+                    Object {
+                      "action": "POP",
+                      "block": [Function],
+                      "createHref": [Function],
+                      "go": [Function],
+                      "goBack": [Function],
+                      "goForward": [Function],
+                      "length": 1,
+                      "listen": [Function],
+                      "location": Object {
+                        "hash": "",
+                        "pathname": "/",
+                        "search": "",
+                        "state": undefined,
+                      },
+                      "push": [Function],
+                      "replace": [Function],
+                    }
                   }
-                }
-              >
-                <div>
+                  location={
+                    Object {
+                      "hash": "",
+                      "pathname": "/",
+                      "search": "",
+                      "state": undefined,
+                    }
+                  }
+                  match={
+                    Object {
+                      "isExact": true,
+                      "params": Object {},
+                      "path": "/",
+                      "url": "/",
+                    }
+                  }
+                >
                   <div
-                    className="bg-pics"
-                  />
-                  <div
-                    className="caption-div "
+                    className="container not-found"
                   >
-                    <h1
-                      className="caption mb-4 mt-5"
-                    >
-                      Order Food Fast!
-                    </h1>
-                    <p
-                      className="caption-small lead"
-                    >
-                      Get your food in minutes!
-                    </p>
+                    <h3>
+                      Not Found 404
+                    </h3>
+                    <div>
+                      <a
+                        to="/"
+                      >
+                        <div>
+                          ..go back Home....
+                        </div>
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <h1
-                      className="order"
-                    >
-                      Available Order
-                    </h1>
-                  </div>
-                  <Connect(withRouter(ProductTable))>
-                    <withRouter(ProductTable)
-                      cart={
-                        Object {
-                          "cart": Object {},
-                          "count": 0,
-                          "items": null,
-                        }
-                      }
-                      cartCount={0}
-                      checkoutOrder={[Function]}
-                      order={
-                        Object {
-                          "order": Object {},
-                        }
-                      }
-                    >
-                      <Route>
-                        <ProductTable
-                          cart={
-                            Object {
-                              "cart": Object {},
-                              "count": 0,
-                              "items": null,
-                            }
-                          }
-                          cartCount={0}
-                          checkoutOrder={[Function]}
-                          history={
-                            Object {
-                              "action": "POP",
-                              "block": [Function],
-                              "createHref": [Function],
-                              "go": [Function],
-                              "goBack": [Function],
-                              "goForward": [Function],
-                              "length": 1,
-                              "listen": [Function],
-                              "location": Object {
-                                "hash": "",
-                                "pathname": "/",
-                                "search": "",
-                                "state": undefined,
-                              },
-                              "push": [Function],
-                              "replace": [Function],
-                            }
-                          }
-                          location={
-                            Object {
-                              "hash": "",
-                              "pathname": "/",
-                              "search": "",
-                              "state": undefined,
-                            }
-                          }
-                          match={
-                            Object {
-                              "isExact": true,
-                              "params": Object {},
-                              "path": "/",
-                              "url": "/",
-                            }
-                          }
-                          order={
-                            Object {
-                              "order": Object {},
-                            }
-                          }
-                        >
-                          <div
-                            className="yoo"
-                          >
-                            <table
-                              className="table table-bordered"
-                            >
-                              <thead
-                                className="thead-dark"
-                              >
-                                <tr>
-                                  <th
-                                    scope="col"
-                                  >
-                                    Order
-                                  </th>
-                                  <th
-                                    scope="col"
-                                  >
-                                    Cost
-                                  </th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <Connect(TableComponent)>
-                                  <TableComponent
-                                    cart={
-                                      Object {
-                                        "cart": Object {},
-                                        "count": 0,
-                                        "items": null,
-                                      }
-                                    }
-                                    loading={
-                                      Object {
-                                        "loading": true,
-                                      }
-                                    }
-                                    removeFromCart={[Function]}
-                                  />
-                                </Connect(TableComponent)>
-                                <tr>
-                                  <th>
-                                    Total
-                                  </th>
-                                  <td
-                                    data-label="Total"
-                                  >
-                                    0
-                                  </td>
-                                </tr>
-                                <tr
-                                  colSpan="2"
-                                >
-                                  <td>
-                                    <button
-                                      className="btn btn-success btn-block"
-                                      onClick={[Function]}
-                                      type="button"
-                                    >
-                                      Place Order
-                                    </button>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </ProductTable>
-                      </Route>
-                    </withRouter(ProductTable)>
-                  </Connect(withRouter(ProductTable))>
-                  <Connect(withRouter(ProductCard))>
-                    <withRouter(ProductCard)
-                      addToCart={[Function]}
-                      auth={
-                        Object {
-                          "isAuthenticated": false,
-                          "loading": false,
-                          "user": Object {},
-                        }
-                      }
-                      foodMenu={
-                        Object {
-                          "foodMenu": Object {
-                            "data": Array [],
-                          },
-                        }
-                      }
-                      getAllMenu={[Function]}
-                      loader={
-                        Object {
-                          "loading": true,
-                        }
-                      }
-                    >
-                      <Route>
-                        <ProductCard
-                          addToCart={[Function]}
-                          auth={
-                            Object {
-                              "isAuthenticated": false,
-                              "loading": false,
-                              "user": Object {},
-                            }
-                          }
-                          foodMenu={
-                            Object {
-                              "foodMenu": Object {
-                                "data": Array [],
-                              },
-                            }
-                          }
-                          getAllMenu={[Function]}
-                          history={
-                            Object {
-                              "action": "POP",
-                              "block": [Function],
-                              "createHref": [Function],
-                              "go": [Function],
-                              "goBack": [Function],
-                              "goForward": [Function],
-                              "length": 1,
-                              "listen": [Function],
-                              "location": Object {
-                                "hash": "",
-                                "pathname": "/",
-                                "search": "",
-                                "state": undefined,
-                              },
-                              "push": [Function],
-                              "replace": [Function],
-                            }
-                          }
-                          loader={
-                            Object {
-                              "loading": true,
-                            }
-                          }
-                          location={
-                            Object {
-                              "hash": "",
-                              "pathname": "/",
-                              "search": "",
-                              "state": undefined,
-                            }
-                          }
-                          match={
-                            Object {
-                              "isExact": true,
-                              "params": Object {},
-                              "path": "/",
-                              "url": "/",
-                            }
-                          }
-                        >
-                          <Spinner>
-                            <div>
-                              <img
-                                alt="LOADING..."
-                                src="test-file-stub"
-                                style={
-                                  Object {
-                                    "display": "block",
-                                    "margin": "auto",
-                                    "width": "200px",
-                                  }
-                                }
-                              />
-                            </div>
-                          </Spinner>
-                        </ProductCard>
-                      </Route>
-                    </withRouter(ProductCard)>
-                  </Connect(withRouter(ProductCard))>
-                </div>
-              </Landing>
-            </Route>
-          </Switch>
-          <Switch />
-          <Footer>
-            <footer
-              className="footer"
-            >
-              <p
-                className="ash"
+                </NotFound>
+              </Route>
+            </Switch>
+            <Footer>
+              <footer
+                className="footer"
               >
-                An Andela project by Edogbo Sunny | ©
-                2019
-              </p>
-            </footer>
-          </Footer>
-        </div>
-      </Router>
-    </BrowserRouter>
+                <p
+                  className="ash"
+                >
+                  An Andela project by Edogbo Sunny | ©
+                  2019
+                </p>
+              </footer>
+            </Footer>
+          </div>
+        </Router>
+      </BrowserRouter>
+      <Portal
+        containerInfo={
+          <div>
+            <div
+              style="position: fixed; top: 0px; right: 0px; z-index: 100;"
+            >
+              <div />
+            </div>
+          </div>
+        }
+      >
+        <Wrapper
+          options={
+            Object {
+              "offset": "30px",
+              "position": "top right",
+              "timeout": 5000,
+              "transition": "scale",
+              "type": "info",
+              "zIndex": 100,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "bottom": "auto",
+                "left": "auto",
+                "position": "fixed",
+                "right": 0,
+                "top": 0,
+                "zIndex": 100,
+              }
+            }
+          >
+            <TransitionGroup
+              childFactory={[Function]}
+              component="div"
+            >
+              <div />
+            </TransitionGroup>
+          </div>
+        </Wrapper>
+      </Portal>
+    </Provider>
   </Provider>
 </routes>
 `;

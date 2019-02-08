@@ -3,6 +3,13 @@
 exports[`Product Card Container Test Suit should mount the product page 1`] = `
 <ProductCard
   addToCart={[MockFunction]}
+  alert={
+    Object {
+      "error": [MockFunction],
+      "show": [MockFunction],
+      "success": [MockFunction],
+    }
+  }
   auth={
     Object {
       "isAuthenticated": true,

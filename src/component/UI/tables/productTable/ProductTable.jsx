@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable no-shadow */
 /* eslint-disable react/prefer-stateless-function */
@@ -5,6 +6,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withAlert } from 'react-alert';
 import { withRouter } from 'react-router-dom';
 import '../../../../styles/ind.css';
 import TableComponent from './TableComponent';
@@ -13,7 +15,6 @@ import { checkoutOrder } from '../../../../actions/checkoutAction';
 export class ProductTable extends Component {
   constructor() {
     super();
-
     this.onClick = this.onClick.bind(this);
   }
 
@@ -22,17 +23,22 @@ export class ProductTable extends Component {
       mealId: '',
       quantity: '',
     };
+
     const token = window.localStorage.getItem('jwtToken');
+    const count = window.localStorage.getItem('count');
+
+    if (count === '0' || !count) {
+      this.props.alert.error('PLEASE ADD ITEM TO CART !');
+    } else {
+      this.props.alert.success('ORDER PLACED SUCCESSFULLY !');
+    }
+    this.props.history.push('/checkout');
     if (!token) {
-      // console.log(this.props.history);
       this.props.history.push('/login');
-      console.log('invalid or no token provided');
     }
     Object.values(this.props.cart.cart).map((orderData) => {
       mealOrder.mealId = (orderData.meal_id);
       mealOrder.quantity = JSON.stringify(orderData.meal_id);
-
-      // console.log('meal-order', mealOrder);
       const { checkoutOrder } = this.props;
       return checkoutOrder(mealOrder);
     });
@@ -74,4 +80,4 @@ export const mapStateToProps = state => ({
   order: state.order,
 });
 
-export default connect(mapStateToProps, { checkoutOrder })(withRouter(ProductTable));
+export default connect(mapStateToProps, { checkoutOrder })(withRouter(withAlert(ProductTable)));

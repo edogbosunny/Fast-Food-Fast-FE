@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable react/button-has-type */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
@@ -6,6 +8,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { withAlert } from 'react-alert';
 // import PropTypes from 'prop-types';
 import { getAllMenu } from '../../../actions/foodMenuAction';
 import { addToCart } from '../../../actions/cartActions';
@@ -27,6 +30,7 @@ export class ProductCard extends Component {
 
   onAdd(menu) {
     this.props.addToCart(menu);
+    this.props.alert.success('ADDED TO CART!');
   }
 
   renderItems() {
@@ -83,4 +87,5 @@ export const mapStateToProps = state => ({
   mealQuantity: state.mealQuantity,
 });
 
-export default connect(mapStateToProps, { getAllMenu, addToCart })(withRouter(ProductCard));
+export default connect(mapStateToProps,
+  { getAllMenu, addToCart })(withRouter(withAlert(ProductCard)));

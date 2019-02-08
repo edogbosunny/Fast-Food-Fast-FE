@@ -63,6 +63,17 @@ exports[`Navbar Test Suit should mount navbar 1`] = `
           >
             <Link
               className="nav-link"
+              replace={false}
+              to="/order-history"
+            >
+              Order History
+            </Link>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <Link
+              className="nav-link"
               onClick={[Function]}
               replace={false}
               to=""

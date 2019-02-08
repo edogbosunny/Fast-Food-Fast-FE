@@ -17,5 +17,10 @@ export const props = {
   history: {
     push: jest.fn(),
   },
+  alert: {
+    success: jest.fn(),
+    error: jest.fn(),
+    show: jest.fn(),
+  },
   removeFromCart: jest.fn(),
 };
