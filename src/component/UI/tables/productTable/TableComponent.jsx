@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 /* eslint-disable no-shadow */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable react/destructuring-assignment */
@@ -7,7 +8,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { removeFromCart } from '../../../../actions/cartActions';
 
-class TableComponent extends Component {
+export class TableComponent extends Component {
   constructor() {
     super();
     this.state = {
@@ -36,38 +37,36 @@ class TableComponent extends Component {
     removeFromCart(newCart);
   }
 
-
   render() {
     const { cart } = this.props.cart;
     // console.log('state---->', cart);
     // return(<div>jj</div>)
     return Object.values(cart).map((orderData) => {
       // const menu = allCartItems[menuId];
-      console.log(orderData.meal);
+      // console.log(orderData.meal);
       return (
         <Fragment key={orderData.meal_id}>
+          <tr>
+            <td data-label='Order'>
+              {orderData.meal}
+              {' '}
+              <span>
+                <button onClick={this.onDelete} id={orderData.meal_id} type='button' className='fas fa-times del-cart' />
+              </span>
 
-            <tr>
-              <td data-label='Order'>
-                {orderData.meal}
-                {' '}
-                <span>
-                  <button onClick={this.onDelete} id={orderData.meal_id} type='button' className='fas fa-times del-cart' />
-                </span>
-
-              </td>
-              <td data-label='Cost'>
-                {' '}
-                {orderData.qty}
-              </td>
-            </tr>
+            </td>
+            <td data-label='Cost'>
+              {' '}
+              {orderData.qty}
+            </td>
+          </tr>
         </Fragment>
       );
     });
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   cart: state.cart,
   loading: state.loader,
 });

@@ -4,6 +4,9 @@ const initialState = {
   isAuthenticated: false,
   user: {},
   loading: null,
+  email: '',
+  password: '',
+  message: '',
 };
 
 export default (state = initialState, action) => {

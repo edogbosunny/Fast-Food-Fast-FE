@@ -1,12 +1,16 @@
+/* eslint-disable import/no-named-as-default */
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import jwtDecode from 'jwt-decode';
-
+import { Provider as AlertProvider } from 'react-alert';
+import AlertTemplate from 'react-alert-template-basic';
 import { setCurrentUser, logoutUser } from '../actions/authActions';
 import Navbar from '../component/UI/navbar/Navbar.jsx';
 import Footer from '../component/UI/footer/Footer.jsx';
 import Landing from '../component/Pages/Landing.jsx';
+import NotFound from '../component/Pages/NotFound';
+// import Checkout from '../component/Pages/checkout';
 import Login from '../component/Pages/Login.jsx';
 import Signup from '../component/Pages/SignupPage.jsx';
 import OrderHistory from '../component/Pages/OrderHistory.jsx';
@@ -26,21 +30,32 @@ if (window.localStorage.jwtToken) {
     window.location.href = '/login';
   }
 }
+const options = {
+  position: 'top right',
+  timeout: 5000,
+  offset: '30px',
+  transition: 'scale',
+};
 
-const routes = () => (
+export const routes = () => (
   <Provider store={store}>
-    <div>
-      <Navbar />
-      <Switch>
-        <Route exact path='/' component={Landing} />
-      </Switch>
-      <Switch>
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/signup' component={Signup} />
-        <Route exact path='/order-history' component={OrderHistory} />
-      </Switch>
-      <Footer />
-    </div>
+    <AlertProvider template={AlertTemplate} {...options}>
+      <BrowserRouter>
+        <div>
+          <Navbar />
+          <Switch>
+            <Route exact path='/' component={Landing} />
+          </Switch>
+          <Switch>
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/signup' component={Signup} />
+            <Route exact path='/order-history' component={OrderHistory} />
+            <Route component={NotFound} />
+          </Switch>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </AlertProvider>
   </Provider>
 );
 

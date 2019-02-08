@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`orderHistore component test-suit should match snapshot 1`] = `
+<tr
+  className="tbg table-text-color tr"
+>
+  <td
+    className="td"
+    data-label="orderid"
+  />
+  <td
+    className="td"
+    data-label="items"
+  >
+     
+    item(s)
+    <button
+      className="btn btn-danger btn-sm m-1"
+      onClick={[Function]}
+      type="button"
+    >
+       Delete Order(s)
+    </button>
+  </td>
+  <td
+    className="td"
+    data-label="cost"
+  >
+    ₦
+  </td>
+  <td
+    className="td"
+    data-label="date"
+  />
+  <td
+    className="td"
+    data-label="status"
+  />
+</tr>
+`;

@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signup card component should match snapshot 1`] = `
+<SignupCard
+  auth={
+    Object {
+      "isAuthenticated": true,
+      "loading": null,
+      "user": Object {
+        "exp": 1549525677,
+        "iat": 1549439277,
+        "id": 1,
+      },
+    }
+  }
+  errors={
+    Object {
+      "email": "",
+      "isAuthenticated": false,
+      "loading": null,
+      "message": "",
+      "password": "",
+    }
+  }
+  history={
+    Object {
+      "action": "PUSH",
+      "push": [MockFunction] {
+        "calls": Array [
+          Array [
+            "/",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      },
+    }
+  }
+  loader={
+    Object {
+      "loading": false,
+    }
+  }
+  location={
+    Object {
+      "hash": "",
+      "pathname": "/login",
+      "search": "",
+    }
+  }
+  registerUser={[MockFunction]}
+  user={Object {}}
+>
+  <div
+    className="Aligner "
+  >
+    <div
+      className="loginCard "
+    >
+      <div
+        className="aligncnt "
+      >
+        <h2
+          className="mt"
+        >
+          Create Account 
+        </h2>
+        <form
+          noValidate={true}
+          onSubmit={[Function]}
+        >
+          <div
+            className="divwidth "
+          >
+            <div>
+              <TextFieldGroup
+                error=""
+                minLength="5"
+                name="firstname"
+                onChange={[Function]}
+                placeholder="First Name"
+                type="firstName"
+                value=""
+              >
+                <div
+                  className="txtwidth form-style-1"
+                >
+                  <input
+                    className="form-control"
+                    minLength="5"
+                    name="firstname"
+                    onChange={[Function]}
+                    placeholder="First Name"
+                    required={true}
+                    type="firstName"
+                    value=""
+                  />
+                </div>
+              </TextFieldGroup>
+              <TextFieldGroup
+                error=""
+                name="lastname"
+                onChange={[Function]}
+                placeholder="Last Name"
+                type="lastname"
+                value=""
+              >
+                <div
+                  className="txtwidth form-style-1"
+                >
+                  <input
+                    className="form-control"
+                    name="lastname"
+                    onChange={[Function]}
+                    placeholder="Last Name"
+                    required={true}
+                    type="lastname"
+                    value=""
+                  />
+                </div>
+              </TextFieldGroup>
+              <TextFieldGroup
+                error=""
+                name="email"
+                onChange={[Function]}
+                placeholder="email"
+                type="email"
+                value=""
+              >
+                <div
+                  className="txtwidth form-style-1"
+                >
+                  <input
+                    className="form-control"
+                    name="email"
+                    onChange={[Function]}
+                    placeholder="email"
+                    required={true}
+                    type="email"
+                    value=""
+                  />
+                </div>
+              </TextFieldGroup>
+              <TextFieldGroup
+                error=""
+                name="password"
+                onChange={[Function]}
+                placeholder="Password"
+                type="password"
+                value=""
+              >
+                <div
+                  className="txtwidth form-style-1"
+                >
+                  <input
+                    className="form-control"
+                    name="password"
+                    onChange={[Function]}
+                    placeholder="Password"
+                    required={true}
+                    type="password"
+                    value=""
+                  />
+                </div>
+              </TextFieldGroup>
+              <TextFieldGroup
+                error=""
+                name="confirmpassword"
+                onChange={[Function]}
+                placeholder="Confirm Password"
+                type="confirmpassword"
+                value=""
+              >
+                <div
+                  className="txtwidth form-style-1"
+                >
+                  <input
+                    className="form-control"
+                    name="confirmpassword"
+                    onChange={[Function]}
+                    placeholder="Confirm Password"
+                    required={true}
+                    type="confirmpassword"
+                    value=""
+                  />
+                </div>
+              </TextFieldGroup>
+              <small />
+            </div>
+            <div>
+              <input
+                className=" submitbtn btn btn-info btn-block mt-4"
+                type="submit"
+              />
+            </div>
+          </div>
+          <div
+            className="bm"
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+</SignupCard>
+`;

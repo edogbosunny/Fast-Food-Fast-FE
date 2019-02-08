@@ -1,18 +1,20 @@
+/* eslint-disable react/no-unused-state */
+/* eslint-disable import/no-named-as-default */
 /* eslint-disable no-shadow */
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withAlert } from 'react-alert';
 import { withRouter } from 'react-router-dom';
 import '../../../../styles/ind.css';
 import TableComponent from './TableComponent';
 import { checkoutOrder } from '../../../../actions/checkoutAction';
 
-class ProductTable extends Component {
+export class ProductTable extends Component {
   constructor() {
     super();
-
     this.onClick = this.onClick.bind(this);
   }
 
@@ -21,17 +23,22 @@ class ProductTable extends Component {
       mealId: '',
       quantity: '',
     };
+
     const token = window.localStorage.getItem('jwtToken');
+    const count = window.localStorage.getItem('count');
+
+    if (count === '0' || !count) {
+      this.props.alert.error('PLEASE ADD ITEM TO CART !');
+    } else {
+      this.props.alert.success('ORDER PLACED SUCCESSFULLY !');
+    }
+    this.props.history.push('/checkout');
     if (!token) {
-      // console.log(this.props.history);
       this.props.history.push('/login');
-      console.log('invalid or no token provided');
     }
     Object.values(this.props.cart.cart).map((orderData) => {
       mealOrder.mealId = (orderData.meal_id);
       mealOrder.quantity = JSON.stringify(orderData.meal_id);
-
-      // console.log('meal-order', mealOrder);
       const { checkoutOrder } = this.props;
       return checkoutOrder(mealOrder);
     });
@@ -67,10 +74,10 @@ class ProductTable extends Component {
 }
 
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   cartCount: state.cart.count,
   cart: state.cart,
   order: state.order,
 });
 
-export default withRouter(connect(mapStateToProps, { checkoutOrder })(ProductTable));
+export default connect(mapStateToProps, { checkoutOrder })(withRouter(withAlert(ProductTable)));

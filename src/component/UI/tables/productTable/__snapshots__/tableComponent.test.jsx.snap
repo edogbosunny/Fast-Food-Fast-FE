@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`orderHistore component test-suit should match snapshot 1`] = `
+<Fragment
+  key="1"
+>
+  <tr>
+    <td
+      data-label="Order"
+    >
+      Spaniish Noodles
+       
+      <span>
+        <button
+          className="fas fa-times del-cart"
+          id={1}
+          onClick={[Function]}
+          type="button"
+        />
+      </span>
+    </td>
+    <td
+      data-label="Cost"
+    >
+       
+      1
+    </td>
+  </tr>
+</Fragment>
+`;

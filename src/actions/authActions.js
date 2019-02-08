@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 /* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
@@ -13,17 +14,19 @@ export const setCurrentUser = decoded => ({
 });
 
 // eslint-disable-next-line import/prefer-default-export
-export const registerUser = userData => (dispatch) => {
+export const registerUser = (userData, history) => (dispatch) => {
   dispatch(setLoader());
-  axios
+  return axios
     .post('https://fast-food-fast-app.herokuapp.com/api/v1/auth/signup', userData)
     // eslint-disable-next-line no-unused-vars
     .then((res) => {
+      // console.log(res);
       const { token } = res.data.data;
       window.localStorage.setItem('jwtToken', token);
       setAuthToken(token);
       const decoded = jwtDecode(token);
       dispatch(setCurrentUser(decoded));
+      history.push('/');
       dispatch(setLoader());
     })
     // .catch(err => console.log(err.response.data.data.errors.email))
@@ -36,23 +39,25 @@ export const registerUser = userData => (dispatch) => {
     });
 };
 
-export const loginUser = userData => (dispatch) => {
-  axios.post('https://fast-food-fast-app.herokuapp.com/api/v1/auth/login', userData)
-    .then((res) => {
-      const { token } = res.data.data;
-      window.localStorage.setItem('jwtToken', token);
-      setAuthToken(token);
-      const decoded = jwtDecode(token);
-      dispatch(setCurrentUser(decoded));
-    })
-    .catch(({ response: { data: { data } } }) => dispatch({
-      type: GET_ERRORS,
-      payload: data.message ? data : data.error,
-    }));
-};
+export const loginUser = userData => dispatch => axios.post('https://fast-food-fast-app.herokuapp.com/api/v1/auth/login', userData)
+  .then((res) => {
+    const { token } = res.data.data;
+    // console.log('token===>>>', token);
+    // console.log('window==>>>'. window)
+    window.localStorage.setItem('jwtToken', token);
+    setAuthToken(token);
+    const decoded = jwtDecode(token);
+    dispatch(setCurrentUser(decoded));
+  })
+  .catch(({ response: { data: { data } } }) => dispatch({
+    type: GET_ERRORS,
+    payload: data.message ? data : data.error,
+  }));
 
-export const logoutUser = () => (dispatch) => {
-  window.localStorage.removeItem('jwtToken');
-  setAuthToken(false);
-  dispatch(setCurrentUser({}));
-};
+export function logoutUser() {
+  return function (dispatch) {
+    window.localStorage.removeItem('jwtToken');
+    setAuthToken(false);
+    return dispatch(setCurrentUser({}));
+  };
+}

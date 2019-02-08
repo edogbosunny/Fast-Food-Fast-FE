@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product Card Container Test Suit should mount the product page 1`] = `
+<ProductCard
+  addToCart={[MockFunction]}
+  alert={
+    Object {
+      "error": [MockFunction],
+      "show": [MockFunction],
+      "success": [MockFunction],
+    }
+  }
+  auth={
+    Object {
+      "isAuthenticated": true,
+      "loading": false,
+      "user": Object {
+        "exp": 1549542586,
+        "iat": 1549456186,
+        "id": 1,
+      },
+    }
+  }
+  foodMenu={
+    Object {
+      "foodMenu": Object {
+        "count": 3,
+        "data": Array [
+          Object {
+            "meal": "Spaniish Noodles",
+            "meal_id": 1,
+            "price": "600",
+          },
+          Object {
+            "meal": "DODO",
+            "meal_id": 2,
+            "price": "200",
+          },
+          Object {
+            "meal": "Ewagoin",
+            "meal_id": 3,
+            "price": "500",
+          },
+        ],
+        "message": "Food menu has been retrieved succesfully",
+      },
+    }
+  }
+  getAllMenu={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  history={
+    Object {
+      "push": [MockFunction],
+    }
+  }
+  loader={
+    Object {
+      "loading": false,
+    }
+  }
+>
+  <div
+    align="center"
+    className="gridcontainer"
+  >
+    <div
+      key="1"
+    >
+      <div
+        className="card griditem"
+      >
+        <div>
+          <div
+            className="cardimg cardImage"
+          />
+        </div>
+        <div>
+          <h5
+            id="meal"
+          >
+            Name:
+             
+            Spaniish Noodles
+          </h5>
+          <h5
+            id="price"
+          >
+            Price:
+             
+            600
+          </h5>
+        </div>
+        <div
+          className="cart-btn-mag"
+        >
+          <button
+            className="btnaccept"
+            id="id"
+            onClick={[Function]}
+            type="button"
+          >
+            Add to Cart 
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      key="2"
+    >
+      <div
+        className="card griditem"
+      >
+        <div>
+          <div
+            className="cardimg cardImage"
+          />
+        </div>
+        <div>
+          <h5
+            id="meal"
+          >
+            Name:
+             
+            DODO
+          </h5>
+          <h5
+            id="price"
+          >
+            Price:
+             
+            200
+          </h5>
+        </div>
+        <div
+          className="cart-btn-mag"
+        >
+          <button
+            className="btnaccept"
+            id="id"
+            onClick={[Function]}
+            type="button"
+          >
+            Add to Cart 
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      key="3"
+    >
+      <div
+        className="card griditem"
+      >
+        <div>
+          <div
+            className="cardimg cardImage"
+          />
+        </div>
+        <div>
+          <h5
+            id="meal"
+          >
+            Name:
+             
+            Ewagoin
+          </h5>
+          <h5
+            id="price"
+          >
+            Price:
+             
+            500
+          </h5>
+        </div>
+        <div
+          className="cart-btn-mag"
+        >
+          <button
+            className="btnaccept"
+            id="id"
+            onClick={[Function]}
+            type="button"
+          >
+            Add to Cart 
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ProductCard>
+`;

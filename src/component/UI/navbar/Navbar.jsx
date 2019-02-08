@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/jsx-no-bind */
@@ -11,7 +12,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logoutUser } from '../../../actions/authActions';
 
-class Navbar extends Component {
+export class Navbar extends Component {
   onLogoutClick(e) {
     e.preventDefault();
     this.props.logoutUser();
@@ -25,8 +26,13 @@ class Navbar extends Component {
     const authLinks = (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
+          <Link to='/order-history' className="nav-link">
+      Order History
+          </Link>
+        </li>
+        <li className="nav-item">
           <Link to='' onClick={this.onLogoutClick.bind(this)} className="nav-link">
-          Logout
+        Logout
           </Link>
         </li>
       </ul>
@@ -35,7 +41,7 @@ class Navbar extends Component {
     const guestLinks = (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
-          <Link to="/register" className="nav-link">
+          <Link to="/signup" className="nav-link">
           Sign Up
           </Link>
         </li>
@@ -86,13 +92,13 @@ class Navbar extends Component {
 }
 
 Navbar.propTypes = {
-  logoutUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired,
+  logoutUser: PropTypes.func,
+  auth: PropTypes.object,
+  history: PropTypes.object,
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   auth: state.auth,
 });
 
-export default withRouter(connect(mapStateToProps, { logoutUser })(Navbar));
+export default connect(mapStateToProps, { logoutUser })(withRouter(Navbar));

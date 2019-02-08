@@ -9,7 +9,7 @@ import TextFieldGroup from '../textField/TextFieldGroup.jsx';
 import { registerUser } from '../../../actions/authActions';
 import Spinner from '../../../utils/Spinner';
 
-class SignupCard extends Component {
+export class SignupCard extends Component {
   constructor() {
     super();
     this.state = {
@@ -137,7 +137,7 @@ class SignupCard extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors,
   loader: state.loader,

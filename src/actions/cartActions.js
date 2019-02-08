@@ -15,6 +15,7 @@ export const addToCart = (menu) => {
   }
 
   if (cartItems[menu.meal_id]) {
+    console.log('cartItems--->', cartItems);
     cartItems[menu.meal_id].qty += 1;
     window.localStorage.setItem('cart', JSON.stringify(cartItems));
     return { type: ADD_TO_CART, payload: cartItems };

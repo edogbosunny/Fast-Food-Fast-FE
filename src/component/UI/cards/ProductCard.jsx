@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable react/button-has-type */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
@@ -6,21 +8,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { withAlert } from 'react-alert';
 // import PropTypes from 'prop-types';
 import { getAllMenu } from '../../../actions/foodMenuAction';
 import { addToCart } from '../../../actions/cartActions';
 import '../../../styles/ind.css';
 import Spinner from '../../../utils/Spinner';
 
-class ProductCard extends Component {
+export class ProductCard extends Component {
   constructor() {
     super();
     this.state = {
       mealQuantity: 0,
     };
-    this.onChange = this.onChange.bind(this);
     this.renderItems = this.renderItems.bind(this);
-    // console.log(this.state, '----state-->');
   }
 
   componentDidMount() {
@@ -29,16 +30,12 @@ class ProductCard extends Component {
 
   onAdd(menu) {
     this.props.addToCart(menu);
-  }
-
-  onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
-    // console.log(this.state);
+    this.props.alert.success('ADDED TO CART!');
   }
 
   renderItems() {
     const { data } = this.props.foodMenu.foodMenu;
-
+    // console.log(this.props);
     return data.map(Foodmeal => (
       <div key={Foodmeal.meal_id}>
         {/* cart cards would be here */}
@@ -61,12 +58,6 @@ class ProductCard extends Component {
           </div>
           <div className='cart-btn-mag'>
             <button type='button' onClick={() => { this.onAdd(Foodmeal); }} className='btnaccept' id='id'>Add to Cart </button>
-            { /* <button type='button' id='sub' className='btncomp'>-</button> */ }
-            { /* <input type='number'
-            onChange={this.onChange}
-            id='num' className='btncomp1' name='mealQuantity' disabled /> */ }
-            {/* <button type='button' onClick={() =>
-             { this.onAdd(Foodmeal); }} id='add' className='btndeny'>+</button> */}
           </div>
         </div>
       </div>
@@ -89,11 +80,12 @@ class ProductCard extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   auth: state.auth,
   foodMenu: state.foodMenu,
   loader: state.loader,
   mealQuantity: state.mealQuantity,
 });
 
-export default withRouter(connect(mapStateToProps, { getAllMenu, addToCart })(ProductCard));
+export default connect(mapStateToProps,
+  { getAllMenu, addToCart })(withRouter(withAlert(ProductCard)));

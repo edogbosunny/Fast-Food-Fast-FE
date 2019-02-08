@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login page should mount the login page 1`] = `
+<div
+  className="order-history-container"
+>
+  <table>
+    <thead
+      className="tbg table-text-color"
+    >
+      <tr>
+        <th>
+          Order-Id
+        </th>
+        <th>
+          Ordered item(s)
+        </th>
+        <th>
+          Total cost
+        </th>
+        <th>
+          Date Ordered
+        </th>
+        <th>
+          Status
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <Connect(OrderHistoryTable) />
+    </tbody>
+  </table>
+</div>
+`;

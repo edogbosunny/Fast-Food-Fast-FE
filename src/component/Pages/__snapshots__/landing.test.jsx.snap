@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Container should mount the login page Yeah! 1`] = `
+<div>
+  <div
+    className="bg-pics"
+  />
+  <div
+    className="caption-div "
+  >
+    <h1
+      className="caption mb-4 mt-5"
+    >
+      Order Food Fast!
+    </h1>
+    <p
+      className="caption-small lead"
+    >
+      Get your food in minutes!
+    </p>
+  </div>
+  <div>
+    <h1
+      className="order"
+    >
+      Available Order
+    </h1>
+  </div>
+  <Connect(withRouter(WithAlert(ProductTable))) />
+  <Connect(withRouter(WithAlert(ProductCard))) />
+</div>
+`;

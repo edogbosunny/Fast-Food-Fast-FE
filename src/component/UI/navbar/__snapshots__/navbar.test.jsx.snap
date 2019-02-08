@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar Test Suit should mount navbar 1`] = `
+<Fragment>
+  <nav
+    className="navbar navbar-expand-sm navbar-dark nav-dark mb-4"
+  >
+    <div
+      className="container"
+    >
+      <Link
+        className="logo navbar-brand"
+        replace={false}
+        to="/"
+      />
+      <button
+        className="navbar-toggler"
+        data-target="#mobile-nav"
+        data-toggle="collapse"
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        className="collapse navbar-collapse"
+        id="mobile-nav"
+      >
+        <ul
+          className="navbar-nav mr-auto nav-tabs"
+        >
+          <li
+            className="nav-item"
+          >
+            <Link
+              className="nav-link  m-auto"
+              replace={false}
+              to="/"
+            >
+               
+              Home
+            </Link>
+          </li>
+          <li
+            className="nav-item "
+          >
+            <Link
+              className="nav-link m-auto"
+              replace={false}
+              to="/about"
+            >
+               
+              About
+            </Link>
+          </li>
+        </ul>
+        <ul
+          className="navbar-nav ml-auto"
+        >
+          <li
+            className="nav-item"
+          >
+            <Link
+              className="nav-link"
+              replace={false}
+              to="/order-history"
+            >
+              Order History
+            </Link>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <Link
+              className="nav-link"
+              onClick={[Function]}
+              replace={false}
+              to=""
+            >
+              Logout
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</Fragment>
+`;
