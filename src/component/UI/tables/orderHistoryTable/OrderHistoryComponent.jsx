@@ -24,7 +24,7 @@ export class OrderHistoryComponent extends Component {
 
   render() {
     const { orderHistory: { orderHistory } } = this.props;
-    console.log(this.props);
+    // console.log(this.props);
     if (orderHistory.mealItem.length !== 0) {
       return orderHistory.mealItem.map(orderedItems => (
         <tr className='tbg table-text-color tr' key={orderedItems.order_id}>

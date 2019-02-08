@@ -31,8 +31,8 @@ export class ProductTable extends Component {
       this.props.alert.error('PLEASE ADD ITEM TO CART !');
     } else {
       this.props.alert.success('ORDER PLACED SUCCESSFULLY !');
+      this.props.history.push('/checkout');
     }
-    this.props.history.push('/checkout');
     if (!token) {
       this.props.history.push('/login');
     }
