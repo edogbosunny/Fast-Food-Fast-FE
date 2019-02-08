@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Container should mount the login page Yeah! 1`] = `
+<div
+  className="container history"
+>
+  <form>
+    <div
+      className="col-md-4"
+    >
+      <h3
+        className="title"
+      >
+        Checkout
+      </h3>
+      <div
+        className="item"
+      >
+        <span
+          className="price"
+        >
+          $200
+        </span>
+        <p
+          className="item-name"
+        >
+          Product 1
+        </p>
+        <p
+          className="item-description"
+        >
+          Lorem ipsum dolor sit amet
+        </p>
+      </div>
+      <div
+        className="item"
+      >
+        <span
+          className="price"
+        >
+          $120
+        </span>
+        <p
+          className="item-name"
+        >
+          Product 2
+        </p>
+        <p
+          className="item-description"
+        >
+          Lorem ipsum dolor sit amet
+        </p>
+      </div>
+      <div
+        className="total"
+      >
+        Total
+        <span
+          className="price"
+        >
+          $320
+        </span>
+      </div>
+    </div>
+    <div
+      className="card-details"
+    >
+      <h3
+        className="title"
+      >
+        Credit Card Details
+      </h3>
+      <div
+        className="row"
+      >
+        <div
+          className="form-group col-sm-7"
+        >
+          <label
+            htmlFor="card-holder"
+          >
+            Card Holder
+          </label>
+          <input
+            aria-describedby="basic-addon1"
+            aria-label="Card Holder"
+            className="form-control"
+            id="card-holder"
+            placeholder="Card Holder"
+            type="text"
+          />
+        </div>
+        <div
+          className="form-group col-sm-5"
+        >
+          <label
+            htmlFor=""
+          >
+            Expiration Date
+          </label>
+          <div
+            className="input-group expiration-date"
+          >
+            <input
+              aria-describedby="basic-addon1"
+              aria-label="MM"
+              className="form-control"
+              placeholder="MM"
+              type="text"
+            />
+            <span
+              className="date-separator"
+            >
+              /
+            </span>
+            <input
+              aria-describedby="basic-addon1"
+              aria-label="YY"
+              className="form-control"
+              placeholder="YY"
+              type="text"
+            />
+          </div>
+        </div>
+        <div
+          className="form-group col-sm-8"
+        >
+          <label
+            htmlFor="card-number"
+          >
+            Card Number
+          </label>
+          <input
+            aria-describedby="basic-addon1"
+            aria-label="Card Holder"
+            className="form-control"
+            id="card-number"
+            placeholder="Card Number"
+            type="text"
+          />
+        </div>
+        <div
+          className="form-group col-sm-4"
+        >
+          <label
+            htmlFor="cvc"
+          >
+            CVC
+          </label>
+          <input
+            aria-describedby="basic-addon1"
+            aria-label="Card Holder"
+            className="form-control"
+            id="cvc"
+            placeholder="CVC"
+            type="text"
+          />
+        </div>
+        <div
+          className="form-group col-sm-12"
+        >
+          <button
+            className="btn btn-primary btn-secondary"
+            type="button"
+          >
+            Proceed
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;

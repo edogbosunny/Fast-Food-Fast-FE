@@ -11,7 +11,7 @@ class OrderHistory extends Component {
             <tr>
               <th>Order-Id</th>
               <th>Ordered item(s)</th>
-              <th>Total cost</th>
+              <th>Cost</th>
               <th>Date Ordered</th>
               <th>Status</th>
             </tr>

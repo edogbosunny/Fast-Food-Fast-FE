@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Container should mount the login page Yeah! 1`] = `
+<div
+  className="container not-found"
+>
+  <h3>
+    Not Found 404
+  </h3>
+  <div>
+    <a
+      to="/"
+    >
+      <div>
+        ..go back Home....
+      </div>
+    </a>
+  </div>
+</div>
+`;

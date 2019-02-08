@@ -10,7 +10,7 @@ import Navbar from '../component/UI/navbar/Navbar.jsx';
 import Footer from '../component/UI/footer/Footer.jsx';
 import Landing from '../component/Pages/Landing.jsx';
 import NotFound from '../component/Pages/NotFound';
-// import Checkout from '../component/Pages/checkout';
+import Checkout from '../component/Pages/checkout';
 import Login from '../component/Pages/Login.jsx';
 import Signup from '../component/Pages/SignupPage.jsx';
 import OrderHistory from '../component/Pages/OrderHistory.jsx';
@@ -50,6 +50,7 @@ export const routes = () => (
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={Signup} />
             <Route exact path='/order-history' component={OrderHistory} />
+            <Route exact path='/checkout' component={Checkout} />
             <Route component={NotFound} />
           </Switch>
           <Footer />

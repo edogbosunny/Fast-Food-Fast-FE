@@ -16,7 +16,7 @@ exports[`Login page should mount the login page 1`] = `
           Ordered item(s)
         </th>
         <th>
-          Total cost
+          Cost
         </th>
         <th>
           Date Ordered
