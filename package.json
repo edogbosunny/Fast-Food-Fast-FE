@@ -9,6 +9,7 @@
   "proxy": "https://fast-food-fast-app.herokuapp.com",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
+    "postinstall": "npm run build",
     "start": "node index.js",
     "start:dev": "webpack-dev-server --config webpack.dev.js",
     "test": "nyc jest --coverage --updateSnapshot",
