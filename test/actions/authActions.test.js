@@ -3,6 +3,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import moxios from 'moxios';
 import { loginUser, registerUser, logoutUser } from '../../src/actions/authActions';
+
 import mockData from '../../src/__mocks__/mockData';
 
 const middleware = [thunk];

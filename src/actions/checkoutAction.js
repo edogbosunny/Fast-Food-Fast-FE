@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import axios from 'axios';
+
 import { CHECKOUT_ORDER } from './types';
 
 const token = window.localStorage.getItem('jwtToken');
